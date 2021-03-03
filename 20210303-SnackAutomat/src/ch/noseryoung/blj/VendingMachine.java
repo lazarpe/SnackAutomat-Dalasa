@@ -23,15 +23,23 @@ public class VendingMachine {
     public void run() {
         addedProducts = new Product[height][width];
 
-        ArrayList<Product>products = new ArrayList<>();
+        ArrayList<Product> products = new ArrayList<>();
+
+        for (int k = height * width; k > 0; k--) {
+            Product p1 = new Product("Cola", 2.5, 5, 50);
+
+            p1.setName("Hallo");
+
+            products.add(p1);
+        }
 
         fillVendingMachine();
 
     }
 
     public void fillVendingMachine() {
-        for (int i = 0; i < height; i++){
-            for (int j = 0; j < width; j++){
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
                 addedProducts[i][j] = new Product("Test", 1, 1, 1);
             }
         }

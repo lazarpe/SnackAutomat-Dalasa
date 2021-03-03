@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a251e7-9de3-4e7b-8207-d2afac2fcf4a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Money.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
     </list>
@@ -145,7 +146,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614756143725</updated>
       <workItem from="1614756145650" duration="608000" />
-      <workItem from="1614757234955" duration="10214000" />
+      <workItem from="1614757234955" duration="11689000" />
     </task>
     <servers />
   </component>
