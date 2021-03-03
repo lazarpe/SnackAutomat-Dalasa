@@ -18,12 +18,23 @@ public class VendingMachine {
     private final int height;
     private final int width;
 
+    Product[][] addedProducts;
+
     public void run() {
-        Product[][] vendingMachine = new Product[height][width];
+        addedProducts = new Product[height][width];
 
         ArrayList<Product>products = new ArrayList<>();
 
+        fillVendingMachine();
 
+    }
+
+    public void fillVendingMachine() {
+        for (int i = 0; i < height; i++){
+            for (int j = 0; j < width; j++){
+                addedProducts[i][j] = new Product("Test", 1, 1, 1);
+            }
+        }
     }
 
     public VendingMachine(int height, int width) {
