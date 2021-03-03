@@ -8,6 +8,6 @@ public class Main {
         test++;
         System.out.println(test);
 
-        
+
     }
 }
