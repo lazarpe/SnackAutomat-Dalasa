@@ -1,3 +1,7 @@
 nachricht von lazar
 
+<<<<<<< Updated upstream
 Hallo
+=======
+2nachricht von lazar
+>>>>>>> Stashed changes
