@@ -19,25 +19,26 @@ public class VendingMachine {
     private final int height;
     private final int width;
     String[] name = {"John", "Marcus", "Susan", "Henry"};
+    ArrayList<Product> products = new ArrayList<>();
 
     Product[][] addedProducts;
 
     public void run() {
-        Random generate = new Random();
+        fillVendingMachine();
+
+    }
+
+    public void fillVendingMachine() {
         addedProducts = new Product[height][width];
-
-        ArrayList<Product> products = new ArrayList<>();
-
+        Random generate = new Random();
         int dimensions = height * width;
 
         for (int k = height * width; k > 0; k--) {
             Product p1 = new Product(name[generate.nextInt(name.length)], generate.nextDouble()*10, generate.nextInt(dimensions-k), generate.nextInt(100));
-
             products.add(p1);
         }
 
         int i = 0;
-
         for (int k = 0; k < width; k++) {
             for (int l = 0; l < height; l++) {
 
@@ -48,27 +49,13 @@ public class VendingMachine {
 
         }
 
-
         for (int k = 0; k < width; k++) {
             for (int l = 0; l < height; l++) {
-
                 System.out.println(products.get(i).getName());
                 i++;
-
-            }
-
-        }
-
-        fillVendingMachine();
-
-    }
-
-    public void fillVendingMachine() {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                addedProducts[i][j] = new Product("Test", 1, 1, 1);
             }
         }
+
     }
 
     public VendingMachine(int height, int width) {
