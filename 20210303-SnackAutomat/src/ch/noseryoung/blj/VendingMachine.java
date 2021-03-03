@@ -15,9 +15,19 @@ import java.util.ArrayList;
  ***/
 public class VendingMachine {
 
+    private int height;
+    private int width;
+
     public void run() {
+        Product[][] vendingMachine = new Product[height][width];
+
         ArrayList<Product>products = new ArrayList<>();
 
 
+    }
+
+    public VendingMachine(int height, int width) {
+        this.height = height;
+        this.width = width;
     }
 }
