@@ -1,6 +1,6 @@
 package ch.noseryoung.blj;
 
-public class Main {
+public class Starter {
     public static void main(String[] args) {
         System.out.println("Fisch");
         int test = 4;

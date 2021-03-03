@@ -104,7 +104,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ch.noseryoung.blj.Main" />
+      <option name="MAIN_CLASS_NAME" value="ch.noseryoung.blj.Starter" />
       <module name="20210303-SnackAutomat" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
