@@ -15,8 +15,8 @@ import java.util.ArrayList;
  ***/
 public class VendingMachine {
 
-    private int height;
-    private int width;
+    private final int height;
+    private final int width;
 
     public void run() {
         Product[][] vendingMachine = new Product[height][width];
