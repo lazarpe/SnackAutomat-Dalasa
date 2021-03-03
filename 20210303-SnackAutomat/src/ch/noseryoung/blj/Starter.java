@@ -4,6 +4,6 @@ public class Starter {
     public static void main(String[] args) {
         VendingMachine vendingMachine = new VendingMachine();
 
-        vendingMachine.test();
+        vendingMachine.run();
     }
 }

@@ -15,9 +15,9 @@ import java.util.ArrayList;
  ***/
 public class VendingMachine {
 
-    public void test() {
+    public void run() {
         ArrayList<Product>products = new ArrayList<>();
 
-        
+
     }
 }
