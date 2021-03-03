@@ -1,5 +1,7 @@
 package ch.noseryoung.blj;
 
+import java.util.ArrayList;
+
 /****
  ---------------------------------------------------------------------
  Anwendung: Objektbasiert Programmieren NoserYoung
@@ -12,4 +14,10 @@ package ch.noseryoung.blj;
  ----------------------------------------------------------------------
  ***/
 public class VendingMachine {
+
+    public void test() {
+        ArrayList<Product>products = new ArrayList<>();
+
+        
+    }
 }

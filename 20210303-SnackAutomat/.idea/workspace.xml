@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a251e7-9de3-4e7b-8207-d2afac2fcf4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Starter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
     </list>
     <list id="39cf3e9d-0b57-4f84-a922-b22fa16049ed" name="Changes by lazar" comment="" />
     <list id="c0192afc-69c7-40e8-995c-dba0dd6d0788" name="Changes by Sascha Buthelezi" comment="" />
@@ -139,7 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614756143725</updated>
       <workItem from="1614756145650" duration="608000" />
-      <workItem from="1614757234955" duration="7437000" />
+      <workItem from="1614757234955" duration="8099000" />
     </task>
     <servers />
   </component>
