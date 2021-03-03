@@ -1,6 +1,7 @@
 package ch.noseryoung.blj;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /****
  ---------------------------------------------------------------------
@@ -17,20 +18,45 @@ public class VendingMachine {
 
     private final int height;
     private final int width;
+    String[] name = {"John", "Marcus", "Susan", "Henry"};
 
     Product[][] addedProducts;
 
     public void run() {
+        Random generate = new Random();
         addedProducts = new Product[height][width];
 
         ArrayList<Product> products = new ArrayList<>();
 
-        for (int k = height * width; k > 0; k--) {
-            Product p1 = new Product("Cola", 2.5, 5, 50);
+        int dimensions = height * width;
 
-            p1.setName("Hallo");
+        for (int k = height * width; k > 0; k--) {
+            Product p1 = new Product(name[generate.nextInt(name.length)], generate.nextDouble()*10, generate.nextInt(dimensions-k), generate.nextInt(100));
 
             products.add(p1);
+        }
+
+        int i = 0;
+
+        for (int k = 0; k < width; k++) {
+            for (int l = 0; l < height; l++) {
+
+                addedProducts[height][width] = products.get(i);
+                i++;
+
+            }
+
+        }
+
+
+        for (int k = 0; k < width; k++) {
+            for (int l = 0; l < height; l++) {
+
+                System.out.println(products.get(i).getName());
+                i++;
+
+            }
+
         }
 
         fillVendingMachine();
