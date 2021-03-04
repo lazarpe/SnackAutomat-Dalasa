@@ -34,13 +34,15 @@ public class VendingMachine {
     Product[][] addedProducts;
 
     public void run() {
-        fillVendingMachine();
+
         printVendingMachine();
         number = enterCode();
         if (checkIfNumIsShutDown(number)) {
             System.exit(1);
         } else if (checkSecretKey(number)) {
             System.out.println("You found out the secret");
+        } else if (number == 1){
+            refillVendingMachine();
         }
     }
 
@@ -51,7 +53,7 @@ public class VendingMachine {
 
         for (int k = width * height; k > 0; k--) {
             Product p1 = new Product(productName[generate.nextInt(productName.length)], (min + generate.nextFloat() *
-                    (max - min)), dimensions - k, generate.nextInt(100));
+                    (max - min)), dimensions - k, generate.nextInt(10));
 
             DecimalFormat df = new DecimalFormat("0.00");
             double f = min + Math.random() * (max - min);
@@ -70,37 +72,59 @@ public class VendingMachine {
     }
 
     public void printProducts(boolean advanced) {
-        int i = 0;
         for (int k = 0; k < height; k++) {
             for (int l = 0; l < width; l++) {
                 if (advanced) {
-                    if (products.get(i).getProduct_code() < 10) {
-                        System.out.print(products.get(i).getProduct_code() + "  | " + products.get(i).getName() + ": " +
-                                products.get(i).getAmount());
+                    if (addedProducts[l][k].getProduct_code() < 10) {
+                        System.out.print(addedProducts[l][k].getProduct_code() + "  | " + addedProducts[l][k].getName() + ": " +
+                                addedProducts[l][k].getAmount());
                     } else {
-                        System.out.print(products.get(i).getProduct_code() + " | " + products.get(i).getName() + ": " +
-                                products.get(i).getAmount());
+                        System.out.print(addedProducts[l][k].getProduct_code() + " | " + addedProducts[l][k].getName() + ": " +
+                                addedProducts[l][k].getAmount());
                     }
                 } else {
-                    if (products.get(i).getProduct_code() < 10) {
-                        System.out.print(products.get(i).getProduct_code() + "  | " + products.get(i).getName());
+                    if (addedProducts[l][k].getProduct_code() < 10) {
+                        System.out.print(addedProducts[l][k].getProduct_code() + "  | " + addedProducts[l][k].getName());
                     } else {
-                        System.out.print(products.get(i).getProduct_code() + " | " + products.get(i).getName());
+                        System.out.print(addedProducts[l][k].getProduct_code() + " | " + addedProducts[l][k].getName());
                     }
                 }
-                printPrices(i);
-                i++;
+                printPrices(l, k);
             }
         }
     }
 
-    public void printPrices(int i) {
-        for (int j = products.get(i).getName().length(); j < 15; j++) {
+    public void giveOutProducts() {
+
+    }
+
+    public void refillVendingMachine() {
+        int i = 0;
+        for (int k = 0; k < height; k++) {
+            for (int l = 0; l < width; l++) {
+                if (addedProducts[l][k].getAmount() < 3) {
+                    i++;
+                }
+            }
+        }
+
+        if (i != 0) {
+            for (int k = 0; k < height; k++) {
+                for (int l = 0; l < width; l++) {
+                    Product product = new Product(addedProducts[l][k].getName(), addedProducts[l][k].getPrice(), addedProducts[l][k].getProduct_code(), 9);
+                    addedProducts[l][k] = product;
+                }
+            }
+        }
+    }
+
+    public void printPrices(int l, int k) {
+        for (int j = addedProducts[l][k].getName().length(); j < 15; j++) {
             System.out.print(" ");
         }
 
         System.out.print("| ");
-        System.out.println(products.get(i).getPrice() + " €");
+        System.out.println(addedProducts[l][k].getPrice() + " €");
     }
 
     public void printVendingMachine() {
@@ -114,12 +138,12 @@ public class VendingMachine {
 
         for (int k = 0; k < height; k++) {
             for (int l = 0; l < width; l++) {
-                if (products.get(j).getProduct_code() < 10) {
+                if (addedProducts[l][k].getProduct_code() < 10) {
                     System.out.print("║ ");
                 } else {
                     System.out.print("║");
                 }
-                System.out.print(products.get(j).getProduct_code());
+                System.out.print(addedProducts[l][k].getProduct_code());
                 j++;
             }
             System.out.println("║");
