@@ -67,8 +67,6 @@ public class VendingMachine {
                 i++;
             }
         }
-
-        i = 0;
     }
 
     public void printProducts(boolean advanced) {
@@ -179,11 +177,7 @@ public class VendingMachine {
     }
 
     public boolean checkSecretKey(int num) {
-        if (num == this.secretKey) {
-            return true;
-        } else {
-            return false;
-        }
+        return num == this.secretKey;
     }
 
     public VendingMachine(int width, int height) {
