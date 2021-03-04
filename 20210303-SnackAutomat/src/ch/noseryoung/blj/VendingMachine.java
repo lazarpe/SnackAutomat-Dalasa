@@ -32,7 +32,7 @@ public class VendingMachine {
 
     public void run() {
         fillVendingMachine();
-
+        printVendingMachine();
     }
 
     public void fillVendingMachine() {
@@ -63,14 +63,76 @@ public class VendingMachine {
         i = 0;
     }
 
-    public void printProducts() {
+    public void printProducts(boolean advanced) {
         int i = 0;
         for (int k = 0; k < width; k++) {
             for (int l = 0; l < height; l++) {
-                System.out.println(products.get(i).getName() + ": " + products.get(i).getAmount());
+                if (advanced) {
+                    if (products.get(i).getProduct_code() < 10) {
+                        System.out.print(products.get(i).getProduct_code() + "  | " + products.get(i).getName() + ": " + products.get(i).getAmount());
+                    } else {
+                        System.out.print(products.get(i).getProduct_code() + " | " + products.get(i).getName() + ": " + products.get(i).getAmount());
+                    }
+                } else {
+                    if (products.get(i).getProduct_code() < 10) {
+                        System.out.print(products.get(i).getProduct_code() + "  | " + products.get(i).getName());
+                    } else {
+                        System.out.print(products.get(i).getProduct_code() + " | " + products.get(i).getName());
+                    }
+                }
+                printPrices(i);
                 i++;
             }
         }
+    }
+
+    public void printPrices(int i) {
+        for (int j = products.get(i).getName().length(); j < 15; j++){
+            System.out.print(" ");
+        }
+
+        System.out.print("| ");
+        System.out.println(products.get(i).getPrice() + " €");
+    }
+
+    public void printVendingMachine() {
+        int j = 0;
+
+        System.out.print("╔");
+        for (int m = 1; m < height; m++){
+            System.out.print("══╦");
+        }
+        System.out.println("══╗");
+
+        for (int k = 0; k < width; k++) {
+            for (int l = 0; l < height; l++) {
+                if (products.get(j).getProduct_code() < 10) {
+                    System.out.print("║ ");
+                } else {
+                    System.out.print("║");
+                }
+                System.out.print(products.get(j).getProduct_code());
+                j++;
+            }
+            System.out.println("║");
+
+            if (k + 1 < width) {
+                System.out.print("╠");
+                for (int m = 1; m < height; m++){
+                    System.out.print("══╬");
+                }
+                System.out.println("══╣");
+            }
+        }
+
+        System.out.print("╚");
+        for (int m = 1; m < height; m++){
+            System.out.print("══╩");
+        }
+        System.out.println("══╝");
+
+        printProducts(false);
+
     }
 
     public VendingMachine(int height, int width) {
