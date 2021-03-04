@@ -1,5 +1,6 @@
 package ch.noseryoung.blj;
 
+import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
@@ -25,6 +26,16 @@ public class VendingMachine {
     private int number;
     private final long secretKey = 293836; // long because it's unsigned
     Scanner sc = new Scanner(System.in);
+    FileWriter myWriter;
+    String fileName = "productAmount.txt";
+
+    /*{
+        try {
+            myWriter = new FileWriter("productAmount.txt", true);
+        } catch (IOException ignored) {
+        }
+    }*/
+
     String[] productName = {
             "Cola", "Icetea", "Fanta", "Chocolate", "Chips", "Crackers", "Pudding", "Milk", "Vanillecake",
             "Red Bull", "M & M's", "Maltesers", "Water", "Monster Energy", "Snickers", "Twixx", "Mars",
@@ -41,7 +52,7 @@ public class VendingMachine {
             System.exit(1);
         } else if (checkSecretKey(number)) {
             System.out.println("You found out the secret");
-        } else if (number == 1){
+        } else if (number == 1) {
             refillVendingMachine();
         }
     }
@@ -141,7 +152,14 @@ public class VendingMachine {
                 } else {
                     System.out.print("║");
                 }
-                System.out.print(addedProducts[l][k].getProduct_code());
+
+                if (addedProducts[l][k].getAmount() != 0) {
+                    System.out.print(addedProducts[l][k].getProduct_code());
+                } else if (addedProducts[l][k].getProduct_code() < 10) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("  ");
+                }
             }
             System.out.println("║");
 
@@ -166,7 +184,6 @@ public class VendingMachine {
 
     public int enterCode() {
         int number;
-        System.out.println("First");
         while (true) {
             try {
                 number = sc.nextInt();
@@ -194,6 +211,73 @@ public class VendingMachine {
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void printToFile() {
+        try {
+            myWriter = new FileWriter("productAmount.txt", false);
+
+            String stringToFile;
+            double doubleToFile;
+            int intToFile;
+
+            for (int k = 0; k < height; k++) {
+                for (int l = 0; l < width; l++) {
+                    stringToFile = addedProducts[l][k].getName();
+                    myWriter.write(stringToFile + "\n");
+                    doubleToFile = addedProducts[l][k].getPrice();
+                    myWriter.write(doubleToFile + "\n");
+                    intToFile = addedProducts[l][k].getProduct_code();
+                    myWriter.write(intToFile + "\n");
+                    intToFile = addedProducts[l][k].getAmount();
+                    myWriter.write(intToFile + "\n\n\n");
+                }
+            }
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public void loadFromFile() {
+
+        File file = new File(fileName);
+
+        /*if (!file.canRead() || !file.isFile()) {
+            System.exit(0);
+        }*/
+
+        BufferedReader in = null;
+        try {
+            in = new BufferedReader(new FileReader(fileName));
+            String line = null;
+            for (int k = 0; k < height; k++) {
+                for (int l = 0; l < width; l++) {
+                    int i = 0;
+                    while (i < 4) {
+                        if ((line = in.readLine()) != null) {
+                            switch (i) {
+                                case 0 -> addedProducts[l][k].setName(line);
+                                case 1 -> addedProducts[l][k].setPrice(Double.parseDouble(line));
+                                case 2 -> addedProducts[l][k].setProduct_code(Integer.parseInt(line));
+                                case 3 -> addedProducts[l][k].setAmount(Integer.parseInt(line));
+                            }
+                            i++;
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (in != null)
+                try {
+                    in.close();
+                } catch (IOException e) {
+                }
         }
     }
 
