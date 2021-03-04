@@ -1,300 +1,300 @@
-Coffee
-7.66
+Red Bull
+4.77
 0
+2
+
+
+Chocolate
+1.92
+1
+4
+
+
+Donut
+4.51
+2
+2
+
+
+Chocolate
+1.46
+3
+8
+
+
+Coffee
+2.93
+4
+5
+
+
+M & M's
+1.84
+5
+0
+
+
+Chips
+5.42
+6
+7
+
+
+Crackers
+6.18
+7
+0
+
+
+Twixx
+6.81
+8
 8
 
 
 Vanillecake
-8.87
-1
-4
-
-
-Crackers
-5.14
-2
-3
-
-
-Cola
-7.97
-3
-7
-
-
-Jelly Babies
-9.81
-4
-5
-
-
-Waffles
-6.52
-5
-6
-
-
-Red Bull
-9.33
-6
-4
-
-
-Twixx
-4.02
-7
-1
-
-
-Mars
-4.84
-8
-7
-
-
-Milk
-3.92
+4.35
 9
-8
+7
 
 
-Chocolate
-3.76
+Chips
+8.44
 10
-2
+4
 
 
-Ice Tea
-7.83
+Fanta
+4.53
 11
-6
-
-
-Pudding
-6.5
-12
-2
-
-
-Capri Sun
-8.9
-13
-3
-
-
-Jelly Babies
-7.83
-14
-9
-
-
-Apple spritzer
-7.57
-15
-9
-
-
-M & M's
-9.86
-16
-1
-
-
-Red Bull
-7.66
-17
-6
+5
 
 
 Waffles
-4.15
-18
-6
+4.88
+12
+8
 
 
-Red Bull
-5.01
-19
-7
+Kägi Fret
+5.78
+13
+5
 
 
-Coffee
-4.94
-20
-1
-
-
-Energy Bar
-8.7
-21
-9
-
-
-Cola
-7.25
-22
-9
-
-
-Apple spritzer
-8.64
-23
-1
-
-
-Red Bull
-1.04
-24
-0
-
-
-Twixx
-7.37
-25
+Fanta
+7.53
+14
 5
 
 
 Monster Energy
-6.05
-26
+4.75
+15
+6
+
+
+Donut
+8.75
+16
+6
+
+
+Coffee
+1.68
+17
 3
 
 
-M & M's
-6.35
+Maltesers
+5.18
+18
+8
+
+
+Twixx
+8.96
+19
+2
+
+
+Maltesers
+5.86
+20
+0
+
+
+Monster Energy
+1.88
+21
+1
+
+
+Snickers
+9.17
+22
+0
+
+
+Crackers
+3.3
+23
+3
+
+
+Crackers
+1.18
+24
+4
+
+
+Kägi Fret
+1.59
+25
+9
+
+
+Energy Bar
+4.85
+26
+7
+
+
+Gummy Bears
+9.56
 27
 3
 
 
 Coffee
-9.47
+4.11
 28
-1
-
-
-Mars
-4.06
-29
-3
-
-
-Chips
-8.95
-30
-0
-
-
-Chips
-3.83
-31
-2
-
-
-Waffles
-9.46
-32
-7
-
-
-Fanta
-1.72
-33
 7
 
 
 Crackers
-5.22
-34
-9
-
-
-Monster Energy
-6.35
-35
-7
-
-
-Apple spritzer
-6.71
-36
+4.99
+29
 5
 
 
-Coffee
-7.21
-37
-7
-
-
-Capri Sun
-8.76
-38
-0
-
-
 Rivella
-4.9
-39
-2
-
-
-Cola
-7.31
-40
-7
-
-
-Chocolate
-6.83
-41
+6.45
+30
 9
 
 
-Fanta
-2.95
-42
+Cola Zero
+6.99
+31
 8
 
 
-Fanta
-8.91
-43
-3
+Rivella
+6.25
+32
+1
 
 
-Pudding
-8.12
-44
-7
-
-
-Capri Sun
-4.13
-45
+Red Bull
+4.17
+33
 9
 
 
 Chips
-7.68
-46
+6.35
+34
+0
+
+
+Chips
+4.56
+35
 6
 
 
-Water
-9.39
-47
+Milk
+3.99
+36
+9
+
+
+Maltesers
+9.36
+37
 3
 
 
-Ice Tea
-3.44
-48
+Coffee
+7.05
+38
+3
+
+
+Fanta
+2.29
+39
+0
+
+
+Jelly Babies
+8.6
+40
+7
+
+
+Milk
+6.13
+41
+2
+
+
+Maltesers
+4.78
+42
+2
+
+
+Chocolate
+7.36
+43
+4
+
+
+Maltesers
+8.39
+44
 6
 
 
-Waffles
-1.33
-49
+Red Bull
+7.91
+45
+0
+
+
+Chips
+2.49
+46
 2
+
+
+Water
+8.4
+47
+4
+
+
+Gummy Bears
+2.62
+48
+9
+
+
+Milk
+8.49
+49
+3
 
 

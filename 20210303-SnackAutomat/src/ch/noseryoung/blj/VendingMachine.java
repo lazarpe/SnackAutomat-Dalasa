@@ -45,13 +45,19 @@ public class VendingMachine {
     Product[][] addedProducts;
 
     public void run() {
-
         printVendingMachine();
+        int inputForSecretMethods;
         number = enterCode();
         if (checkIfNumIsShutDown(number)) {
             System.exit(1);
         } else if (checkSecretKey(number)) {
             System.out.println("You found out the secret");
+            System.out.println("Change item price \t[1]");
+            inputForSecretMethods = sc.nextInt();
+            switch (inputForSecretMethods) {
+                case 1:
+                    changeProductPrice();
+            }
         } else if (number == 1) {
             refillVendingMachine();
         }
@@ -286,6 +292,12 @@ public class VendingMachine {
 
     public boolean checkSecretKey(int num) {
         return num == this.secretKey;
+    }
+
+    public void changeProductPrice() {
+        System.out.println("You can change the price now...");
+        System.out.print("What's the product number of the price you want to change: ");
+        number = sc.nextInt();
     }
 
     public VendingMachine(int width, int height) {
