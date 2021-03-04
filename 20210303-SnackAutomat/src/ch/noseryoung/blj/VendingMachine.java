@@ -37,10 +37,10 @@ public class VendingMachine {
     }*/
 
     String[] productName = {
-            "Cola", "Icetea", "Fanta", "Chocolate", "Chips", "Crackers", "Pudding", "Milk", "Vanillecake",
+            "Cola", "Ice Tea", "Fanta", "Chocolate", "Chips", "Crackers", "Pudding", "Milk", "Vanillecake",
             "Red Bull", "M & M's", "Maltesers", "Water", "Monster Energy", "Snickers", "Twixx", "Mars",
             "Energy Bar", "Kägi Fret", "Donut", "Waffles", "Gummy Bears", "Coffee", "Jelly Babies", "Rivella",
-            "Cola Zero", "Capri Sonne", "Apple spritzer"};
+            "Cola Zero", "Capri Sun", "Apple spritzer"};
     ArrayList<Product> products = new ArrayList<>();
     Product[][] addedProducts;
 
@@ -54,6 +54,9 @@ public class VendingMachine {
             System.out.println("You found out the secret");
         } else if (number == 1) {
             refillVendingMachine();
+        }
+        else if (number < 50 || number > 0){
+        Money.processMoney(number, products);
         }
     }
 
