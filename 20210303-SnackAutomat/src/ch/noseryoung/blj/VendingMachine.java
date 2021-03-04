@@ -1,12 +1,9 @@
 package ch.noseryoung.blj;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
-
-import static java.lang.Float.parseFloat;
+import java.util.Scanner;
 
 /****
  ---------------------------------------------------------------------
@@ -21,27 +18,34 @@ import static java.lang.Float.parseFloat;
  ***/
 public class VendingMachine {
 
-    private final int height;
     private final int width;
+    private final int height;
     private final int min = 1;
     private final int max = 10;
-    String[] name = {"Cola", "Icetea", "Fanta", "Chocolate", "Chips", "Crackers", "Pudding", "Milk", "Vanillecake", "Red Bull", "M & M's", "Maltesers", "Water", "Monster Energy", "Snickers", "Twixx", "Mars", "Energy Bar", "Kägi Fret", "Donut", "Waffles", "Gummy Bears", "Coffee", "Jelly Babies", "Rivella", "Cola Zero", "Capri Sonne", "Apple spritzer"};
+    private int number;
+    private final long secretKey = 293836; // long because it's unsigned
+    Scanner sc = new Scanner(System.in);
+    String[] productName = {
+            "Cola", "Icetea", "Fanta", "Chocolate", "Chips", "Crackers", "Pudding", "Milk", "Vanillecake",
+            "Red Bull", "M & M's", "Maltesers", "Water", "Monster Energy", "Snickers", "Twixx", "Mars",
+            "Energy Bar", "Kägi Fret", "Donut", "Waffles", "Gummy Bears", "Coffee", "Jelly Babies", "Rivella",
+            "Cola Zero", "Capri Sonne", "Apple spritzer"};
     ArrayList<Product> products = new ArrayList<>();
-
     Product[][] addedProducts;
 
     public void run() {
         fillVendingMachine();
         printVendingMachine();
+        enterCode();
     }
 
     public void fillVendingMachine() {
-        addedProducts = new Product[height][width];
+        addedProducts = new Product[width][height];
         Random generate = new Random();
-        int dimensions = height * width;
+        int dimensions = width * height;
 
-        for (int k = height * width; k > 0; k--) {
-            Product p1 = new Product(name[generate.nextInt(name.length)], (min + generate.nextFloat() * (max - min)), dimensions - k, generate.nextInt(100));
+        for (int k = width * height; k > 0; k--) {
+            Product p1 = new Product(productName[generate.nextInt(productName.length)], (min + generate.nextFloat() * (max - min)), dimensions - k, generate.nextInt(100));
 
             DecimalFormat df = new DecimalFormat("0.00");
             double f = min + Math.random() * (max - min);
@@ -53,8 +57,8 @@ public class VendingMachine {
         }
 
         int i = 0;
-        for (int k = 0; k < width; k++) {
-            for (int l = 0; l < height; l++) {
+        for (int k = 0; k < height; k++) {
+            for (int l = 0; l < width; l++) {
                 addedProducts[l][k] = products.get(i);
                 i++;
             }
@@ -65,8 +69,8 @@ public class VendingMachine {
 
     public void printProducts(boolean advanced) {
         int i = 0;
-        for (int k = 0; k < width; k++) {
-            for (int l = 0; l < height; l++) {
+        for (int k = 0; k < height; k++) {
+            for (int l = 0; l < width; l++) {
                 if (advanced) {
                     if (products.get(i).getProduct_code() < 10) {
                         System.out.print(products.get(i).getProduct_code() + "  | " + products.get(i).getName() + ": " + products.get(i).getAmount());
@@ -87,7 +91,7 @@ public class VendingMachine {
     }
 
     public void printPrices(int i) {
-        for (int j = products.get(i).getName().length(); j < 15; j++){
+        for (int j = products.get(i).getName().length(); j < 15; j++) {
             System.out.print(" ");
         }
 
@@ -99,13 +103,13 @@ public class VendingMachine {
         int j = 0;
 
         System.out.print("╔");
-        for (int m = 1; m < height; m++){
+        for (int m = 1; m < width; m++) {
             System.out.print("══╦");
         }
         System.out.println("══╗");
 
-        for (int k = 0; k < width; k++) {
-            for (int l = 0; l < height; l++) {
+        for (int k = 0; k < height; k++) {
+            for (int l = 0; l < width; l++) {
                 if (products.get(j).getProduct_code() < 10) {
                     System.out.print("║ ");
                 } else {
@@ -116,9 +120,9 @@ public class VendingMachine {
             }
             System.out.println("║");
 
-            if (k + 1 < width) {
+            if (k + 1 < height) {
                 System.out.print("╠");
-                for (int m = 1; m < height; m++){
+                for (int m = 1; m < width; m++) {
                     System.out.print("══╬");
                 }
                 System.out.println("══╣");
@@ -126,7 +130,7 @@ public class VendingMachine {
         }
 
         System.out.print("╚");
-        for (int m = 1; m < height; m++){
+        for (int m = 1; m < width; m++) {
             System.out.print("══╩");
         }
         System.out.println("══╝");
@@ -135,8 +139,39 @@ public class VendingMachine {
 
     }
 
-    public VendingMachine(int height, int width) {
-        this.height = height;
+    public int enterCode() {
+        int number = 0;
+        while (true) {
+            try {
+                number = sc.nextInt();
+                break;
+            } catch (Exception ignored) {
+            }
+        }
+        return number;
+    }
+
+    public boolean checkIfNumIsShutDown(int num) {
+        num = enterCode();
+        if (num == 9999) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+/*
+    public boolean checkSecretKey(long secretKey) {
+        while () {
+            if () {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+*/
+    public VendingMachine(int width, int height) {
         this.width = width;
+        this.height = height;
     }
 }
