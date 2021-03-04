@@ -36,7 +36,12 @@ public class VendingMachine {
     public void run() {
         fillVendingMachine();
         printVendingMachine();
-        enterCode();
+        number = enterCode();
+        if (checkIfNumIsShutDown(number)) {
+            System.exit(1);
+        } else if (checkSecretKey(number)) {
+            System.out.println("You found out the secret");
+        }
     }
 
     public void fillVendingMachine() {
@@ -45,14 +50,13 @@ public class VendingMachine {
         int dimensions = width * height;
 
         for (int k = width * height; k > 0; k--) {
-            Product p1 = new Product(productName[generate.nextInt(productName.length)], (min + generate.nextFloat() * (max - min)), dimensions - k, generate.nextInt(100));
+            Product p1 = new Product(productName[generate.nextInt(productName.length)], (min + generate.nextFloat() *
+                    (max - min)), dimensions - k, generate.nextInt(100));
 
             DecimalFormat df = new DecimalFormat("0.00");
             double f = min + Math.random() * (max - min);
             f = Double.parseDouble(df.format(f));
-
             p1.setPrice(f);
-
             products.add(p1);
         }
 
@@ -73,9 +77,11 @@ public class VendingMachine {
             for (int l = 0; l < width; l++) {
                 if (advanced) {
                     if (products.get(i).getProduct_code() < 10) {
-                        System.out.print(products.get(i).getProduct_code() + "  | " + products.get(i).getName() + ": " + products.get(i).getAmount());
+                        System.out.print(products.get(i).getProduct_code() + "  | " + products.get(i).getName() + ": " +
+                                products.get(i).getAmount());
                     } else {
-                        System.out.print(products.get(i).getProduct_code() + " | " + products.get(i).getName() + ": " + products.get(i).getAmount());
+                        System.out.print(products.get(i).getProduct_code() + " | " + products.get(i).getName() + ": " +
+                                products.get(i).getAmount());
                     }
                 } else {
                     if (products.get(i).getProduct_code() < 10) {
@@ -141,35 +147,45 @@ public class VendingMachine {
 
     public int enterCode() {
         int number = 0;
+        System.out.println("First");
         while (true) {
             try {
                 number = sc.nextInt();
                 break;
-            } catch (Exception ignored) {
+            } catch (Exception e) {
+                System.out.println("Please try again");
+                sc.nextLine();
             }
         }
         return number;
     }
 
+    public static void sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean checkIfNumIsShutDown(int num) {
-        num = enterCode();
         if (num == 9999) {
+            System.out.println("System is shutting down...");
+            sleep(3000);
             return true;
         } else {
             return false;
         }
     }
-/*
-    public boolean checkSecretKey(long secretKey) {
-        while () {
-            if () {
-                return true;
-            } else {
-                return false;
-            }
+
+    public boolean checkSecretKey(int num) {
+        if (num == this.secretKey) {
+            return true;
+        } else {
+            return false;
         }
     }
-*/
+
     public VendingMachine(int width, int height) {
         this.width = width;
         this.height = height;
