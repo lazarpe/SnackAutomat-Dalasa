@@ -63,7 +63,7 @@ public class VendingMachine {
         i = 0;
     }
 
-    public void giveOutProducts() {
+    public void printProducts() {
         int i = 0;
         for (int k = 0; k < width; k++) {
             for (int l = 0; l < height; l++) {
