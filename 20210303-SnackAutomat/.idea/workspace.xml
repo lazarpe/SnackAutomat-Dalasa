@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a251e7-9de3-4e7b-8207-d2afac2fcf4a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
     </list>
@@ -48,7 +49,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -80,6 +81,8 @@
       <updated>1614756143725</updated>
       <workItem from="1614756145650" duration="608000" />
       <workItem from="1614757234955" duration="12624000" />
+      <workItem from="1614844916709" duration="60000" />
+      <workItem from="1614845041121" duration="563000" />
     </task>
     <servers />
   </component>
@@ -99,25 +102,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../.." />
+    </ignored-roots>
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="2561" height="419" key="GridCell.Tab.0.bottom" timestamp="1614785959014">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2561" height="419" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1614785959014" />
-    <state width="2561" height="419" key="GridCell.Tab.0.center" timestamp="1614785959014">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2561" height="419" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1614785959014" />
-    <state width="2561" height="419" key="GridCell.Tab.0.left" timestamp="1614785959013">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2561" height="419" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1614785959013" />
-    <state width="2561" height="419" key="GridCell.Tab.0.right" timestamp="1614785959014">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2561" height="419" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1614785959014" />
   </component>
 </project>

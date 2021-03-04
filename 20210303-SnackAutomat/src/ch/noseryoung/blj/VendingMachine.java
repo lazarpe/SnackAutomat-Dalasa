@@ -18,7 +18,7 @@ public class VendingMachine {
 
     private final int height;
     private final int width;
-    String[] name = {"John", "Marcus", "Susan", "Henry"};
+    String[] name = {"Cola", "Icetea", "Fanta", "Chocolate", "Chips", "Crackers", "Pudding", "Milk", "Vanillecake", "Red Bull", "M & M's", "Maltesers", "Water", "Monster Energy", "Snickers", "Twixx", "Mars", "Energy Bar", "Kägi Fret", "Donut", "Waffles", "Gummy Bears", "Coffee", "Jelly Babies", "Rivella", "Cola Zero", "Capri Sonne", "Apple spritzer"};
     ArrayList<Product> products = new ArrayList<>();
 
     Product[][] addedProducts;
@@ -34,7 +34,7 @@ public class VendingMachine {
         int dimensions = height * width;
 
         for (int k = height * width; k > 0; k--) {
-            Product p1 = new Product(name[generate.nextInt(name.length)], generate.nextDouble()*10, generate.nextInt(dimensions-k), generate.nextInt(100));
+            Product p1 = new Product(name[generate.nextInt(name.length)], generate.nextDouble() * 10, generate.nextInt(dimensions - k), generate.nextInt(100));
             products.add(p1);
         }
 
