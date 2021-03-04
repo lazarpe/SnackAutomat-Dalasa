@@ -41,37 +41,36 @@ public class VendingMachine {
         int dimensions = height * width;
 
         for (int k = height * width; k > 0; k--) {
-            Product p1 = new Product(name[generate.nextInt(name.length)], (min + generate.nextFloat() * (max - min)), dimensions - k, generate.nextInt(100)); //Math.round(a * 100.0) / 100.0;
+            Product p1 = new Product(name[generate.nextInt(name.length)], (min + generate.nextFloat() * (max - min)), dimensions - k, generate.nextInt(100));
 
             DecimalFormat df = new DecimalFormat("0.00");
             double f = min + Math.random() * (max - min);
             f = Double.parseDouble(df.format(f));
 
             p1.setPrice(f);
-            
+
             products.add(p1);
         }
 
         int i = 0;
         for (int k = 0; k < width; k++) {
             for (int l = 0; l < height; l++) {
-
                 addedProducts[l][k] = products.get(i);
                 i++;
-
             }
-
         }
 
         i = 0;
+    }
 
+    public void giveOutProducts() {
+        int i = 0;
         for (int k = 0; k < width; k++) {
             for (int l = 0; l < height; l++) {
-                System.out.println(products.get(i).getName() + "  " + products.get(i).getPrice());
+                System.out.println(products.get(i).getName() + ": " + products.get(i).getAmount());
                 i++;
             }
         }
-
     }
 
     public VendingMachine(int height, int width) {
