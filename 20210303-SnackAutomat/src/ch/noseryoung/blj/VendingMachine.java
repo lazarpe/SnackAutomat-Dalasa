@@ -128,8 +128,6 @@ public class VendingMachine {
     }
 
     public void printVendingMachine() {
-        int j = 0;
-
         System.out.print("╔");
         for (int m = 1; m < width; m++) {
             System.out.print("══╦");
@@ -144,7 +142,6 @@ public class VendingMachine {
                     System.out.print("║");
                 }
                 System.out.print(addedProducts[l][k].getProduct_code());
-                j++;
             }
             System.out.println("║");
 
@@ -168,7 +165,7 @@ public class VendingMachine {
     }
 
     public int enterCode() {
-        int number = 0;
+        int number;
         System.out.println("First");
         while (true) {
             try {
