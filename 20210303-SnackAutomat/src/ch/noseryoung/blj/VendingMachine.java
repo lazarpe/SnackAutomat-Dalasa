@@ -28,6 +28,7 @@ public class VendingMachine {
     Scanner sc = new Scanner(System.in);
     FileWriter myWriter;
     String fileName = "productAmount.txt";
+    Money moneyinterface = new Money();
 
     /*{
         try {
@@ -60,9 +61,9 @@ public class VendingMachine {
             }
         } else if (number == 1) {
             refillVendingMachine();
-        } else if (number < 50 || number > 0) {
-            Money.processMoney(number, products);
-        }
+        }else if (number < width * height || number >= 0) {
+                moneyinterface.processMoney(number, products);
+            }
     }
 
     public void fillVendingMachine() {

@@ -21,23 +21,22 @@ public class Money {
         Scanner coinreader = new Scanner(System.in);
         double productprice = Products.get(usernumber).getPrice();  //temp price for calculating
         double usersbalance;                                        //temp amount
-        double tempprice = 1; //quick test                                          //for calculating
-
         System.out.println("==========================================================");
-        System.out.println("You entered this number : " + usernumber);
+        System.out.println("Item number : " + usernumber);
         System.out.println("This item costs : " + Products.get(usernumber).getPrice());
-        while(tempprice > 0){
-            System.out.print("Please Enter Money : ");
-            usersbalance = coinreader.nextDouble();
-            System.out.println(tempprice);
-            productprice = productprice - usersbalance;
-            if(tempprice == 0){
-                break;
-            }
-        }
-        System.out.println("bruhh");
+        System.out.print("Please Enter Money : ");
+
+        usersbalance = coinreader.nextDouble();
+
+        //users credit balance
+
         System.out.println("==========================================================");
 
         return usernumber;
+    }
+
+    public static int calcMoney(){
+        int empty = 0;  //this must get deleted
+        return empty;
     }
 }
