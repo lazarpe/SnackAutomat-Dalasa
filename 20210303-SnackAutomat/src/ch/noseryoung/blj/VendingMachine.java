@@ -24,6 +24,7 @@ public class VendingMachine {
     private final int min = 1;
     private final int max = 10;
     private int number;
+    private int payedproduct;  // after the payment
     private final long secretKey = 86420; // long because it's unsigned
     Scanner sc = new Scanner(System.in);
     FileWriter myWriter;
@@ -64,7 +65,11 @@ public class VendingMachine {
                     break;
             }
         } else if (number < width * height || number >= 0) {
-            giveOutProducts(Money.processMoney(number, products));
+            payedproduct = Money.displaySingleProductPrice(number, products);
+            if(payedproduct == -1) {/*if payed product is -1 then do nothing*/ }
+            else{
+                giveOutProducts(payedproduct);
+            }
         }
     }
 
