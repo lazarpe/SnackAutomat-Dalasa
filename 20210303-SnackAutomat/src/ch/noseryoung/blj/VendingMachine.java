@@ -28,14 +28,6 @@ public class VendingMachine {
     Scanner sc = new Scanner(System.in);
     FileWriter myWriter;
     String fileName = "productAmount.txt";
-    Money moneyinterface = new Money();
-
-    /*{
-        try {
-            myWriter = new FileWriter("productAmount.txt", true);
-        } catch (IOException ignored) {
-        }
-    }*/
 
     String[] productName = {
             "Cola", "Ice Tea", "Fanta", "Chocolate", "Chips", "Crackers", "Pudding", "Milk", "Vanillecake",
