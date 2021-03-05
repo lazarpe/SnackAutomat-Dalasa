@@ -67,13 +67,16 @@ public class Money {
         while (coinsNeeded > 0) {
             System.out.println("Insert Coins : ");
             usercoins = coinreader.nextDouble();
+            if (usercoins < 0){
+                usercoins = 0;
+            }
             coinsNeeded = coinsNeeded - usercoins;
         }
         if (coinsNeeded < 0) {
             usercoins = coinsNeeded + usercoins;
         }
         System.out.println("Your leftover coins: " + usercoins);
-        System.out.println("Product cost: " + coinsNeeded);
+        System.out.println("Product cost: " + productprice);
         return productprice;
     }
 
