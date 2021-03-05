@@ -27,6 +27,7 @@ public class VendingMachine {
     private int payedproduct;  // after the payment
     private final long secretKey = 86420; // long because it's unsigned
     Scanner sc = new Scanner(System.in);
+    Random generate = new Random();
     FileWriter myWriter;
     String fileName = "productAmount.txt";
 
@@ -66,8 +67,7 @@ public class VendingMachine {
             }
         } else if (number < width * height || number >= 0) {
             payedproduct = Money.displaySingleProductPrice(number, products);
-            if(payedproduct == -1) {/*if payed product is -1 then do nothing*/ }
-            else{
+            if (payedproduct == -1) {/*if payed product is -1 then do nothing*/ } else {
                 giveOutProducts(payedproduct);
             }
         }
@@ -75,7 +75,6 @@ public class VendingMachine {
 
     public void fillVendingMachine() {
         addedProducts = new Product[width][height];
-        Random generate = new Random();
         int dimensions = width * height;
 
         for (int k = width * height; k > 0; k--) {
@@ -296,20 +295,29 @@ public class VendingMachine {
     }
 
     public void giveOutProducts(int number) {
+        int stuck = 0;
         if (products.get(number).getAmount() > 0) {
-            products.get(number).setAmount(products.get(number).getAmount() - 1);
-            System.out.println("Your Product is on the way!");
+            if (generate.nextInt(2) != 0) {
+                products.get(number).setAmount(products.get(number).getAmount() - 1);
+                System.out.println("Your Product is on the way!");
+            } else {
+                System.out.println("\nNoooo, your product got stuck, bad luck!");
+                stuck = 1;
+            }
 
-            System.out.println("\n\n");
-
-
-            System.out.print("╔");
+            System.out.print("\n╔");
             for (int j = 0; j < 17; j++) {
                 System.out.print("═");
             }
             System.out.println("╗");
             System.out.print("║");
-            System.out.print(" " + products.get(number).getName());
+            if (stuck == 0) {
+                System.out.print(" " + products.get(number).getName());
+            } else {
+                for (int n = 0; n <= products.get(number).getName().length(); n++){
+                    System.out.print(" ");
+                }
+            }
             for (int i = products.get(number).getName().length(); i < 16; i++) {
                 System.out.print(" ");
             }
