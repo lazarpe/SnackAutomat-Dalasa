@@ -24,7 +24,7 @@ public class VendingMachine {
     private final int min = 1;
     private final int max = 10;
     private int number;
-    private final long secretKey = 293836; // long because it's unsigned
+    private final long secretKey = 86420; // long because it's unsigned
     Scanner sc = new Scanner(System.in);
     FileWriter myWriter;
     String fileName = "productAmount.txt";
@@ -45,17 +45,24 @@ public class VendingMachine {
             System.exit(1);
         } else if (checkSecretKey(number)) {
             System.out.println("You found out the secret");
-            System.out.println("Change item price \t[1]");
-            System.out.println("Change product \t\t[2]");
+            System.out.println("Change item price \t\t[1]");
+            System.out.println("Change product \t\t\t[2]");
+            System.out.println("Refill vending machine \t[3]");
+            System.out.print("Choose: ");
             inputForSecretMethods = sc.nextInt();
             switch (inputForSecretMethods) {
                 case 1:
                     changeProductPrice(products);
+                    break;
                 case 2:
                     System.out.println("Change product...");
+                    break;
+                case 3:
+                    refillVendingMachine();
+                    System.out.println("Vending machine is getting filled");
+                    sleep(4000);
+                    break;
             }
-        } else if (number == 1) {
-            refillVendingMachine();
         } else if (number < width * height || number >= 0) {
             giveOutProducts(Money.processMoney(number, products));
         }
@@ -179,7 +186,6 @@ public class VendingMachine {
         System.out.println("══╝");
 
         printProducts(false);
-
     }
 
     public int enterCode() {
@@ -316,29 +322,63 @@ public class VendingMachine {
     }
 
     public void changeProductPrice(ArrayList<Product> Products) { // ----- SECRET KEY -----
-        System.out.println("You can change the price now...");
-        printProducts(false);
-        System.out.print("What's the product number of the price you want to change: ");
-        int number = sc.nextInt();
-        System.out.println("You entered this number: " + number + "\nProduct name: " + Products.get(number).getName());
         char answerToChangePrice = ' ';
-        System.out.println("Are you sure you want to change the price of this product? (y / n): ");
-        answerToChangePrice = sc.next().charAt(0);
-        switch (answerToChangePrice) {
-            case 'y' -> {
-                System.out.print("Enter the new price: ");
-                double newPrice = 0;
-                newPrice = sc.nextDouble();
-                Products.get(number).setPrice(newPrice);
-                System.out.println("You successfully changed the price to: " + Products.get(number).getPrice());
-            }
-            case 'n' -> {
-
-            }
-            default -> {
-
+        double newPrice = 0;
+        System.out.println("You can change the price now...");
+        printProducts(true);
+        int number = 0;
+        while (true) {
+            try {
+                System.out.print("\nWhat's the product number of the price you want to change: ");
+                number = sc.nextInt();
+                System.out.println("You entered this number: " + number + "\nProduct name: " + Products.get(number).getName());
+                break;
+            } catch (Exception e) {
+                System.out.print("Something went wrong with the product number. Try again.\n");
+                sc.nextLine();
             }
         }
+        while (true) {
+            try {
+                System.out.println("Are you sure you want to change the price of this product? (Y / N): ");
+                answerToChangePrice = sc.next().charAt(0);
+                if (answerToChangePrice == 'y' || answerToChangePrice == 'Y' || answerToChangePrice == 'n' ||
+                        answerToChangePrice == 'N') {
+                    break;
+                } else {
+                    System.out.println("Please enter a valid input!");
+                }
+            } catch (Exception e) {
+                System.out.print("Something went wrong with your answer. Try again.\n");
+                sc.nextLine();
+            }
+        }
+        while (true) {
+            try {
+                if (answerToChangePrice == 'Y' || answerToChangePrice == 'y') {
+                    System.out.print("Enter the new price: ");
+                    newPrice = sc.nextDouble();
+                    break;
+                } else {
+                    System.out.println("Ok leaving secret methods...");
+                }
+            } catch (Exception e) {
+                System.out.println("Something went wrong with your answer. Try again.\n");
+                sc.nextLine();
+            }
+        }
+        while (true) {
+            try {
+                Products.get(number).setPrice(newPrice);
+                System.out.println("You successfully changed the price to: " + Products.get(number).getPrice());
+                break;
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("Could not change the price...");
+                sc.nextLine();
+            }
+        }
+
         int i = 0;
         for (int k = 0; k < height; k++) {
             for (int l = 0; l < width; l++) {
