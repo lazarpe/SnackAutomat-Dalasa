@@ -61,9 +61,9 @@ public class VendingMachine {
             }
         } else if (number == 1) {
             refillVendingMachine();
-        }else if (number < width * height || number >= 0) {
-                moneyinterface.processMoney(number, products);
-            }
+        } else if (number < width * height || number >= 0) {
+            giveOutProducts(moneyinterface.processMoney(number, products));
+        }
     }
 
     public void fillVendingMachine() {
