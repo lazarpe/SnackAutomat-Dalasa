@@ -36,6 +36,7 @@ public class VendingMachine {
             "Red Bull", "M & M's", "Maltesers", "Water", "Monster Energy", "Snickers", "Twixx", "Mars",
             "Energy Bar", "Kägi Fret", "Donut", "Waffles", "Gummy Bears", "Coffee", "Jelly Babies", "Rivella",
             "Cola Zero", "Capri Sun", "Apple spritzer"};
+    Person person = new Person(null, 0);
     ArrayList<Product> products = new ArrayList<>();
     Product[][] addedProducts;
 
@@ -189,7 +190,7 @@ public class VendingMachine {
         }
         System.out.println("══╝");
 
-        printProducts(false);
+        printProducts(true);
     }
 
     public int enterCode() {
@@ -298,6 +299,7 @@ public class VendingMachine {
         int stuck = 0;
         if (products.get(number).getAmount() > 0) {
             if (generate.nextInt(2) != 0) {
+                person.setInventory(products.get(number));
                 products.get(number).setAmount(products.get(number).getAmount() - 1);
                 System.out.println("Your Product is on the way!");
             } else {
