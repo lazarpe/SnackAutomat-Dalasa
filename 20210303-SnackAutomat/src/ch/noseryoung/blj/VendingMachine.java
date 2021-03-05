@@ -62,7 +62,7 @@ public class VendingMachine {
         } else if (number == 1) {
             refillVendingMachine();
         } else if (number < width * height || number >= 0) {
-            giveOutProducts(moneyinterface.processMoney(number, products));
+            giveOutProducts(Money.processMoney(number, products));
         }
     }
 
