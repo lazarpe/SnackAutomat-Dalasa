@@ -114,10 +114,6 @@ public class VendingMachine {
         }
     }
 
-    public void giveOutProducts() {
-
-    }
-
     public void refillVendingMachine() {
         int i = 0;
         for (int k = 0; k < height; k++) {
