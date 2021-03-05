@@ -46,10 +46,13 @@ public class VendingMachine {
         } else if (checkSecretKey(number)) {
             System.out.println("You found out the secret");
             System.out.println("Change item price \t[1]");
+            System.out.println("Change product \t\t[2]");
             inputForSecretMethods = sc.nextInt();
             switch (inputForSecretMethods) {
                 case 1:
                     changeProductPrice(products);
+                case 2:
+                    System.out.println("Change product...");
             }
         } else if (number == 1) {
             refillVendingMachine();
@@ -323,9 +326,24 @@ public class VendingMachine {
         answerToChangePrice = sc.next().charAt(0);
         switch (answerToChangePrice) {
             case 'y' -> {
-                System.out.println("Enter the new price: ");
-                int newPrice = 0;
+                System.out.print("Enter the new price: ");
+                double newPrice = 0;
+                newPrice = sc.nextDouble();
+                Products.get(number).setPrice(newPrice);
+                System.out.println("You successfully changed the price to: " + Products.get(number).getPrice());
+            }
+            case 'n' -> {
 
+            }
+            default -> {
+
+            }
+        }
+        int i = 0;
+        for (int k = 0; k < height; k++) {
+            for (int l = 0; l < width; l++) {
+                addedProducts[l][k] = products.get(i);
+                i++;
             }
         }
     }
