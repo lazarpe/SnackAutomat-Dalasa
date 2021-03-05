@@ -57,7 +57,7 @@ public class VendingMachine {
             inputForSecretMethods = sc.nextInt();
             switch (inputForSecretMethods) {
                 case 1:
-                    changeProductPrice();
+                    changeProductPrice(number, products);
             }
         } else if (number == 1) {
             refillVendingMachine();
@@ -295,11 +295,22 @@ public class VendingMachine {
         number = sc.nextInt();
     }
 
-    public void changeProductPrice() {
-        printProducts(false);
+    public void changeProductPrice(int number, ArrayList<Product> Products) {
         System.out.println("You can change the price now...");
+        printProducts(false);
         System.out.print("What's the product number of the price you want to change: ");
         number = sc.nextInt();
+        System.out.println("You entered this number: " + number + "\nProduct name: " + Products.get(number).getName());
+        char answerToChangePrice = ' ';
+        System.out.println("Are you sure you want to change the price of this product? (y / n): ");
+        answerToChangePrice = sc.next().charAt(0);
+        switch (answerToChangePrice) {
+            case 'y' -> {
+                System.out.println("Enter the new price: ");
+                int newPrice = 0;
+
+            }
+        }
     }
 
     public VendingMachine(int width, int height) {
