@@ -57,7 +57,7 @@ public class VendingMachine {
             inputForSecretMethods = sc.nextInt();
             switch (inputForSecretMethods) {
                 case 1:
-                    changeProductPrice(number, products);
+                    changeProductPrice(products);
             }
         } else if (number == 1) {
             refillVendingMachine();
@@ -114,7 +114,7 @@ public class VendingMachine {
         }
     }
 
-    public void refillVendingMachine() {
+    public void refillVendingMachine() { // ----- SECRET KEY -----
         int i = 0;
         for (int k = 0; k < height; k++) {
             for (int l = 0; l < width; l++) {
@@ -247,13 +247,13 @@ public class VendingMachine {
         }
     }
 
-    public void loadFromFile() {
+    public void loadFromFile() { // ----- SECRET KEY -----
 
         File file = new File(fileName);
 
-        /*if (!file.canRead() || !file.isFile()) {
+        if (!file.canRead() || !file.isFile()) {
             System.exit(0);
-        }*/
+        }
 
         BufferedReader in = null;
         try {
@@ -295,11 +295,11 @@ public class VendingMachine {
         number = sc.nextInt();
     }
 
-    public void changeProductPrice(int number, ArrayList<Product> Products) {
+    public void changeProductPrice(ArrayList<Product> Products) { // ----- SECRET KEY -----
         System.out.println("You can change the price now...");
         printProducts(false);
         System.out.print("What's the product number of the price you want to change: ");
-        number = sc.nextInt();
+        int number = sc.nextInt();
         System.out.println("You entered this number: " + number + "\nProduct name: " + Products.get(number).getName());
         char answerToChangePrice = ' ';
         System.out.println("Are you sure you want to change the price of this product? (y / n): ");
