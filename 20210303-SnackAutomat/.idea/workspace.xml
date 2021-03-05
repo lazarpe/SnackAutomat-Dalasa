@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c5a251e7-9de3-4e7b-8207-d2afac2fcf4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/VendingMachine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Money.java" afterDir="false" />
     </list>
     <list id="39cf3e9d-0b57-4f84-a922-b22fa16049ed" name="Changes by lazar" comment="" />
     <list id="c0192afc-69c7-40e8-995c-dba0dd6d0788" name="Changes by Sascha Buthelezi" comment="" />
@@ -117,27 +118,5 @@
     </ignored-roots>
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1708" height="274" key="GridCell.Tab.0.bottom" timestamp="1614952509573">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1708" height="274" key="GridCell.Tab.0.bottom/0.0.1707.960@0.0.1707.960" timestamp="1614952509573" />
-    <state width="1391" height="731" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1614950269279" />
-    <state width="1708" height="274" key="GridCell.Tab.0.center" timestamp="1614952509573">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1708" height="274" key="GridCell.Tab.0.center/0.0.1707.960@0.0.1707.960" timestamp="1614952509573" />
-    <state width="1391" height="731" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1614950269278" />
-    <state width="1708" height="274" key="GridCell.Tab.0.left" timestamp="1614952509572">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1708" height="274" key="GridCell.Tab.0.left/0.0.1707.960@0.0.1707.960" timestamp="1614952509572" />
-    <state width="1391" height="731" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1614950269278" />
-    <state width="1708" height="274" key="GridCell.Tab.0.right" timestamp="1614952509573">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1708" height="274" key="GridCell.Tab.0.right/0.0.1707.960@0.0.1707.960" timestamp="1614952509573" />
-    <state width="1391" height="731" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1614950269279" />
   </component>
 </project>

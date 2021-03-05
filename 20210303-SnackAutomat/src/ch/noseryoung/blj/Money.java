@@ -1,4 +1,5 @@
 package ch.noseryoung.blj;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -15,38 +16,40 @@ import java.util.ArrayList;
  ***/
 public class Money {
 
-    public Money(){
+    public Money() {
     }
-    public static int displaySingleProductPrice(int usernumber, ArrayList<Product> Products){
+
+    public static int displaySingleProductPrice(int usernumber, ArrayList<Product> Products) {
         char cancel;
         double productprice = Products.get(usernumber).getPrice();
         Scanner cancelbutton = new Scanner(System.in);
         System.out.println("==========================================================");
         System.out.println("Item number : " + usernumber);
         System.out.println("This item costs : " + Products.get(usernumber).getPrice());
-        while(true) {
-            try{
+        while (true) {
+            try {
                 System.out.println("Would you like to continue ? [ Y / N ] :");
                 cancel = cancelbutton.next().charAt(0);
                 if (cancel == 'Y' || cancel == 'y') {
                     Money.payForProduct(productprice);              //pay product section
                     break;
-                }else if(cancel == 'N' || cancel == 'n'){
+                } else if (cancel == 'N' || cancel == 'n') {
                     System.out.println("Canceling ... ");
 
 
-                    usernumber = -1;    //canceling value
-                    return usernumber;
+                    //canceling value
+                    return -1;
                 }
-            } catch (Exception e) {
+            } catch (Exception ignore) {
             }
+
             System.err.println("Invalid input");
         }
         return usernumber;
     }
 
 
-    public static double addMoney(){
+    public static double addMoney() {
         Scanner coinreader = new Scanner(System.in);
         double usersbalance;
         System.out.print("How much will you be adding : ");
@@ -57,19 +60,20 @@ public class Money {
         return usersbalance;
     }
 
-    public static double payForProduct(double productprice){
+    public static double payForProduct(double productprice) {
         Scanner coinreader = new Scanner(System.in);
         double usercoins = 0;
-        while(productprice > 0){
+        double coinsNeeded = productprice;
+        while (coinsNeeded > 0) {
             System.out.println("Insert Coins : ");
             usercoins = coinreader.nextDouble();
-            productprice = productprice - usercoins;
+            coinsNeeded = coinsNeeded - usercoins;
         }
-        if(productprice < 0){
-            usercoins = productprice + usercoins;
+        if (coinsNeeded < 0) {
+            usercoins = coinsNeeded + usercoins;
         }
-        System.out.println(usercoins);
-        System.out.println(productprice);
+        System.out.println("Your leftover coins: " + usercoins);
+        System.out.println("Product cost: " + coinsNeeded);
         return productprice;
     }
 
