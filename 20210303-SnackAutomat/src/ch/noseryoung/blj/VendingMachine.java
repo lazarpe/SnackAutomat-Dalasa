@@ -293,7 +293,14 @@ public class VendingMachine {
         return num == this.secretKey;
     }
 
+    public void giveOutProducts(int number) {
+        System.out.println("Enter the product");
+        System.out.print("What's the product number of the price you want to change: ");
+        number = sc.nextInt();
+    }
+
     public void changeProductPrice() {
+        printProducts(false);
         System.out.println("You can change the price now...");
         System.out.print("What's the product number of the price you want to change: ");
         number = sc.nextInt();

@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a251e7-9de3-4e7b-8207-d2afac2fcf4a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/Starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/Starter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/VendingMachine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productAmount.txt" beforeDir="false" afterPath="$PROJECT_DIR$/productAmount.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Starter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
     </list>
     <list id="39cf3e9d-0b57-4f84-a922-b22fa16049ed" name="Changes by lazar" comment="" />
