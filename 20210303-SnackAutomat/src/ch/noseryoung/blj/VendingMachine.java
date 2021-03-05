@@ -282,9 +282,34 @@ public class VendingMachine {
     }
 
     public void giveOutProducts(int number) {
-        System.out.println("Enter the product");
-        System.out.print("What's the product number of the price you want to change: ");
-        number = sc.nextInt();
+        if (products.get(number).getAmount() > 0) {
+            products.get(number).setAmount(products.get(number).getAmount() - 1);
+            System.out.println("Your Product is on the way!");
+
+            System.out.println("\n\n");
+
+
+            System.out.print("╔");
+            for (int j = 0; j < 17; j++) {
+                System.out.print("═");
+            }
+            System.out.println("╗");
+            System.out.print("║");
+            System.out.print(" " + products.get(number).getName());
+            for (int i = products.get(number).getName().length(); i < 16; i++) {
+                System.out.print(" ");
+            }
+            System.out.println("║");
+            System.out.print("╚");
+            for (int k = 0; k < 17; k++) {
+                System.out.print("═");
+            }
+            System.out.println("╝");
+
+        } else {
+            System.out.println("This products is out of stock, return later for more!");
+        }
+        sleep(3000);
     }
 
     public void changeProductPrice(ArrayList<Product> Products) { // ----- SECRET KEY -----
