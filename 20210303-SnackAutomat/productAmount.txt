@@ -1,300 +1,300 @@
-Red Bull
-4.77
+Cola
+1.14
 0
-2
-
-
-Chocolate
-1.92
 1
-4
 
 
-Donut
-4.51
-2
-2
-
-
-Chocolate
-1.46
+Mars
+9.64
+1
 3
-8
 
 
-Coffee
-2.93
-4
-5
+Apple spritzer
+8.36
+2
+1
 
 
 M & M's
-1.84
+7.47
+3
+0
+
+
+Apple spritzer
+8.56
+4
+2
+
+
+Mars
+6.45
 5
 0
-
-
-Chips
-5.42
-6
-7
-
-
-Crackers
-6.18
-7
-0
-
-
-Twixx
-6.81
-8
-8
 
 
 Vanillecake
-4.35
-9
+6.74
+6
+2
+
+
+Jelly Babies
+9.09
 7
-
-
-Chips
-8.44
-10
-4
-
-
-Fanta
-4.53
-11
-5
-
-
-Waffles
-4.88
-12
 8
 
 
-Kägi Fret
-5.78
+Pudding
+7.76
+8
+3
+
+
+Apple spritzer
+3.93
+9
+8
+
+
+Energy Bar
+2.04
+10
+3
+
+
+Vanillecake
+1.07
+11
+1
+
+
+Monster Energy
+4.84
+12
+0
+
+
+Fanta
+3.91
 13
 5
 
 
-Fanta
-7.53
+Gummy Bears
+6.2
 14
-5
-
-
-Monster Energy
-4.75
-15
-6
-
-
-Donut
-8.75
-16
-6
-
-
-Coffee
-1.68
-17
-3
-
-
-Maltesers
-5.18
-18
-8
-
-
-Twixx
-8.96
-19
-2
-
-
-Maltesers
-5.86
-20
 0
 
 
+Crackers
+1.81
+15
+1
+
+
+Fanta
+2.95
+16
+5
+
+
+Water
+2.46
+17
+4
+
+
+Coffee
+1.48
+18
+3
+
+
+Pudding
+7.19
+19
+1
+
+
+Twixx
+8.47
+20
+6
+
+
 Monster Energy
-1.88
+9.45
 21
 1
 
 
-Snickers
-9.17
+Vanillecake
+4.06
 22
-0
-
-
-Crackers
-3.3
-23
-3
-
-
-Crackers
-1.18
-24
-4
-
-
-Kägi Fret
-1.59
-25
 9
 
 
-Energy Bar
-4.85
+Donut
+7.2
+23
+4
+
+
+Monster Energy
+5.19
+24
+3
+
+
+Ice Tea
+6.63
+25
+3
+
+
+Capri Sun
+6.08
 26
 7
 
 
-Gummy Bears
-9.56
+Apple spritzer
+6.97
 27
-3
-
-
-Coffee
-4.11
-28
-7
-
-
-Crackers
-4.99
-29
 5
 
 
-Rivella
-6.45
-30
-9
-
-
-Cola Zero
-6.99
-31
-8
-
-
-Rivella
-6.25
-32
-1
-
-
-Red Bull
-4.17
-33
-9
-
-
-Chips
-6.35
-34
-0
-
-
-Chips
-4.56
-35
-6
-
-
-Milk
-3.99
-36
-9
-
-
-Maltesers
-9.36
-37
+M & M's
+5.55
+28
 3
 
 
-Coffee
-7.05
-38
-3
-
-
-Fanta
-2.29
-39
-0
-
-
-Jelly Babies
-8.6
-40
-7
-
-
-Milk
-6.13
-41
-2
-
-
-Maltesers
-4.78
-42
-2
-
-
-Chocolate
-7.36
-43
-4
-
-
-Maltesers
-8.39
-44
-6
-
-
-Red Bull
-7.91
-45
-0
-
-
-Chips
-2.49
-46
+Crackers
+4.13
+29
 2
 
 
 Water
-8.4
-47
-4
+1.22
+30
+0
 
 
-Gummy Bears
-2.62
-48
+M & M's
+8.07
+31
+8
+
+
+Capri Sun
+6.32
+32
 9
 
 
-Milk
-8.49
-49
+Kägi Fret
+7.57
+33
+4
+
+
+Rivella
+6.88
+34
 3
+
+
+Energy Bar
+3.4
+35
+8
+
+
+Rivella
+5.33
+36
+1
+
+
+Ice Tea
+8.51
+37
+7
+
+
+Rivella
+3.01
+38
+2
+
+
+M & M's
+4.83
+39
+3
+
+
+Chocolate
+4.38
+40
+6
+
+
+Fanta
+6.56
+41
+2
+
+
+Red Bull
+5.56
+42
+8
+
+
+Pudding
+4.32
+43
+9
+
+
+Waffles
+5.41
+44
+0
+
+
+M & M's
+3.59
+45
+6
+
+
+Ice Tea
+9.48
+46
+7
+
+
+Cola
+6.43
+47
+2
+
+
+Rivella
+6.03
+48
+7
+
+
+Chocolate
+4.77
+49
+6
 
 

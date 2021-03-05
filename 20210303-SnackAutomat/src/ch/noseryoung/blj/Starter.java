@@ -6,7 +6,7 @@ public class Starter {
         vendingMachine.fillVendingMachine();
         //vendingMachine.loadFromFile();
         vendingMachine.printToFile();
-        while(true) {
+        while (true) {
             vendingMachine.run();
         }
     }

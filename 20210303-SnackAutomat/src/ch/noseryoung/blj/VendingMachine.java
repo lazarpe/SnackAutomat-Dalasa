@@ -266,6 +266,7 @@ public class VendingMachine {
             for (int k = 0; k < height; k++) {
                 for (int l = 0; l < width; l++) {
                     int i = 0;
+                    int j = 0;
                     while (i < 4) {
                         if ((line = in.readLine()) != null) {
                             switch (i) {
@@ -275,6 +276,11 @@ public class VendingMachine {
                                 case 3 -> addedProducts[l][k].setAmount(Integer.parseInt(line));
                             }
                             i++;
+                        } else {
+                            j++;
+                        }
+                        if (j > 2){
+                            break;
                         }
                     }
                 }
