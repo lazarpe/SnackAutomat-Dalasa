@@ -316,7 +316,7 @@ public class VendingMachine {
             if (stuck == 0) {
                 System.out.print(" " + products.get(number).getName());
             } else {
-                for (int n = 0; n <= products.get(number).getName().length(); n++){
+                for (int n = 0; n <= products.get(number).getName().length(); n++) {
                     System.out.print(" ");
                 }
             }
@@ -368,33 +368,27 @@ public class VendingMachine {
                 sc.nextLine();
             }
         }
+        int i = 0;
         while (true) {
             try {
                 if (answerToChangePrice == 'Y' || answerToChangePrice == 'y') {
                     System.out.print("Enter the new price: ");
                     newPrice = sc.nextDouble();
+                    Products.get(number).setPrice(newPrice);
+                    System.out.println("You successfully changed the price to: " + Products.get(number).getPrice());
+                    sleep(4000);
                     break;
-                } else {
+                } else if (answerToChangePrice == 'N' || answerToChangePrice == 'n') {
                     System.out.println("Ok leaving secret methods...");
+                    sleep(4000);
+                    break;
                 }
             } catch (Exception e) {
                 System.out.println("Something went wrong with your answer. Try again.\n");
                 sc.nextLine();
             }
         }
-        while (true) {
-            try {
-                Products.get(number).setPrice(newPrice);
-                System.out.println("You successfully changed the price to: " + Products.get(number).getPrice());
-                break;
-            } catch (Exception e) {
-                e.printStackTrace();
-                System.out.println("Could not change the price...");
-                sc.nextLine();
-            }
-        }
 
-        int i = 0;
         for (int k = 0; k < height; k++) {
             for (int l = 0; l < width; l++) {
                 addedProducts[l][k] = products.get(i);
