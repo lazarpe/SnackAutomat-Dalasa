@@ -60,9 +60,8 @@ public class VendingMachine {
             }
         } else if (number == 1) {
             refillVendingMachine();
-        }
-        else if (number < 50 || number > 0){
-        Money.processMoney(number, products);
+        } else if (number < 50 || number > 0) {
+            Money.processMoney(number, products);
         }
     }
 
@@ -240,7 +239,7 @@ public class VendingMachine {
                     intToFile = addedProducts[l][k].getProduct_code();
                     myWriter.write(intToFile + "\n");
                     intToFile = addedProducts[l][k].getAmount();
-                    myWriter.write(intToFile + "\n\n\n");
+                    myWriter.write(intToFile + "\n");
                 }
             }
             myWriter.close();
@@ -266,22 +265,15 @@ public class VendingMachine {
             for (int k = 0; k < height; k++) {
                 for (int l = 0; l < width; l++) {
                     int i = 0;
-                    int j = 0;
                     while (i < 4) {
-                        if ((line = in.readLine()) != null) {
-                            switch (i) {
-                                case 0 -> addedProducts[l][k].setName(line);
-                                case 1 -> addedProducts[l][k].setPrice(Double.parseDouble(line));
-                                case 2 -> addedProducts[l][k].setProduct_code(Integer.parseInt(line));
-                                case 3 -> addedProducts[l][k].setAmount(Integer.parseInt(line));
-                            }
-                            i++;
-                        } else {
-                            j++;
+                        line = in.readLine();
+                        switch (i) {
+                            case 0 -> addedProducts[l][k].setName(line);
+                            case 1 -> addedProducts[l][k].setPrice(Double.parseDouble(line));
+                            case 2 -> addedProducts[l][k].setProduct_code(Integer.parseInt(line));
+                            case 3 -> addedProducts[l][k].setAmount(Integer.parseInt(line));
                         }
-                        if (j > 2){
-                            break;
-                        }
+                        i++;
                     }
                 }
             }
