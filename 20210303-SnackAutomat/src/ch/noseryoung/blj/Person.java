@@ -9,8 +9,7 @@ import java.util.ArrayList;
  * Project name: 20210303-SnackAutomat
  **/
 public class Person {
-    ArrayList<Product> myItems;
-    double wallet;
+    ArrayList<Product> myItems = new ArrayList<>();
 
     public void setInventory(Product product) {
         product.setAmount(1);
@@ -22,10 +21,5 @@ public class Person {
         for (Product myItem : myItems) {
             System.out.println(myItem.getName());
         }
-    }
-
-    public Person(ArrayList<Product> myItems, double wallet) {
-        this.myItems = myItems;
-        this.wallet = wallet;
     }
 }

@@ -28,7 +28,7 @@ public class VendingMachine {
     private int number;
     private int payedproduct;  // after the payment
     private final long secretKey = 86420; // long because it's unsigned
-    private double userbalance;
+    //private double userbalance;
     Scanner scan = new Scanner(System.in);
     Random generate = new Random();
     FileWriter myWriter;
@@ -39,11 +39,11 @@ public class VendingMachine {
             "Red Bull", "M & M's", "Maltesers", "Water", "Monster Energy", "Snickers", "Twixx", "Mars",
             "Energy Bar", "Kägi Fret", "Donut", "Waffles", "Gummy Bears", "Coffee", "Jelly Babies", "Rivella",
             "Cola Zero", "Capri Sun", "Apple spritzer"};
-    Person person = new Person(null, 0);
+    Person person = new Person();
     ArrayList<Product> products = new ArrayList<>();
     Product[][] addedProducts;
 
-    //PlaySound audioPlayer = new PlaySound();
+    PlaySound audioPlayer = new PlaySound();
 
     public void run() {
         createMenu(number);
@@ -134,7 +134,7 @@ public class VendingMachine {
                     }
                 }
                 if (number < width * height && number >= 0) {
-                    payedproduct = Money.displaySingleProductPrice(number, products, userbalance);
+                    payedproduct = Money.displaySingleProductPrice(number, products);
                     if (payedproduct == -1) {/*if payed product is -1 then do nothing*/ } else {
                         giveOutProducts(payedproduct);
                     }
@@ -142,10 +142,10 @@ public class VendingMachine {
                 break;
             case 4:
                 System.out.println("You can add your money here.");
-                userbalance = Money.addMoney(userbalance);
+                Money.addMoney();
                 break;
             case 5:
-                Money.showUserbalance(userbalance);
+                Money.showUserbalance();
                 break;
             case 6:
                 int musicControl = 0;
@@ -159,10 +159,10 @@ public class VendingMachine {
                         musicControl = scan.nextInt();
                         switch (musicControl) {
                             case 1:
-                                //audioPlayer.playMusic();
+                                audioPlayer.playMusic();
                                 continue;
                             case 2:
-                                //audioPlayer.stopMusic();
+                                audioPlayer.stopMusic();
                                 continue;
                             case 3:
                                 System.out.println("\nLeaving music settings...\n");

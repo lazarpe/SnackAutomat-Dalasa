@@ -16,20 +16,22 @@ import java.util.ArrayList;
  ----------------------------------------------------------------------
  ***/
 public class Money {
+    static double usersbalance;
     static Scanner scan = new Scanner(System.in);
+    static DecimalFormat df = new DecimalFormat("0.00");
 
-    public static int displaySingleProductPrice(int usernumber, ArrayList<Product> Products, double usersbalance) {
+    public static int displaySingleProductPrice(int usernumber, ArrayList<Product> Products) {
         char cancel;
         double productprice = Products.get(usernumber).getPrice();
         System.out.println("==========================================================");
         System.out.println("Item number : " + usernumber);
-        System.out.println("This item costs : " + Products.get(usernumber).getPrice());
+        System.out.println("This item costs : " + Products.get(usernumber).getPrice() + " €");
         while (true) {
             try {
                 System.out.println("Would you like to continue ? [ Y / N ] :");
                 cancel = scan.next().charAt(0);
                 if (cancel == 'Y' || cancel == 'y') {
-                    Money.payForProduct(productprice, usersbalance);              //pay product section
+                    Money.payForProduct(productprice);              //pay product section
                     return usernumber;
                 } else if (cancel == 'N' || cancel == 'n') {
                     System.out.println("Canceling ... ");
@@ -43,8 +45,7 @@ public class Money {
         }
     }
 
-    public static double addMoney(double userbalance) {
-        double usersbalance;
+    public static double addMoney() {
         double addedNewBalance;
         while (true) {
             try {
@@ -55,7 +56,7 @@ public class Money {
                     continue;
                 } else {
                     System.out.println("You added " + addedNewBalance);
-                    usersbalance = userbalance + addedNewBalance;
+                    usersbalance = usersbalance + addedNewBalance;
                     break;
                 }
             } catch (Exception e) {
@@ -63,35 +64,41 @@ public class Money {
                 scan.nextLine();
             }
         }
+        setBalance(usersbalance);
         VendingMachine.sleep(3000);
         return usersbalance;
     }
 
-    public static double payForProduct(double productprice, double userbalance) {
-        DecimalFormat df = new DecimalFormat("0.00");
+    public static double payForProduct(double productprice) {
         double returnMoney = 0;
-        returnMoney = Double.parseDouble(df.format(returnMoney));
         double coinsNeeded = productprice;
         while (coinsNeeded > 0) {
-            if (userbalance < 0) {
-                userbalance = 0;
+            if (usersbalance <= 0) {
+                usersbalance = 0;
                 System.out.println("Your balance is low");
                 break;
             }
-            coinsNeeded -= userbalance;
-            if (coinsNeeded < 0) {
+            coinsNeeded -= usersbalance;
+            if (coinsNeeded <= 0) {
                 returnMoney = Math.abs(coinsNeeded);
-                System.out.println("Your change: " + returnMoney);
+                returnMoney = Double.parseDouble(df.format(returnMoney));
+                System.out.println("Your change: " + returnMoney + " €");
                 break;
             }
         }
-        System.out.println("Product cost: " + productprice);
+        usersbalance -= productprice;
+        setBalance(usersbalance);
+        System.out.println("Product cost: " + productprice + " €");
         return productprice;
     }
 
-    public static void showUserbalance(double userbalance) {
-        System.out.println("Your balance: " + userbalance);
+    public static void showUserbalance() {
+        System.out.println("Your balance: " + usersbalance + " €");
         VendingMachine.sleep(3000);
+    }
+
+    public static void setBalance(double balance){
+        usersbalance = Double.parseDouble(df.format(balance));
     }
 
     public Money() {
