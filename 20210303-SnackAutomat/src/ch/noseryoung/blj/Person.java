@@ -19,7 +19,9 @@ public class Person {
 
     public void showInventory() {
         for (Product myItem : myItems) {
+            System.out.println("Your Items:");
             System.out.println(myItem.getName());
+            VendingMachine.sleep(3000);
         }
     }
 }
