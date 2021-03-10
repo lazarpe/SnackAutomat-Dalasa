@@ -1,5 +1,7 @@
 package ch.noseryoung.blj;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -41,8 +43,11 @@ public class VendingMachine {
     ArrayList<Product> products = new ArrayList<>();
     Product[][] addedProducts;
 
+    PlaySound audioPlayer = new PlaySound();
+
     public void run() {
-        printVendingMachine();
+        audioPlayer.play();
+        //printVendingMachine();
         createMenu(number);
     }
 
@@ -50,7 +55,13 @@ public class VendingMachine {
         System.out.println("Menu:");
         while (true) {
             try {
-                System.out.println("[1] Enter product code\n[2] Insert money\n[3] Show user balance\n[4] Leave vending machine");
+                System.out.println("[1] Show vending machine\n" +
+                        "[2] Show items from vending machine\n" +
+                        "[3] Enter product code\n" +
+                        "[4] Insert money\n" +
+                        "[5] Show user balance\n" +
+                        "[6] Leave vending machine");
+
                 System.out.print("Choose: ");
                 code = scan.nextInt();
                 break;
@@ -62,6 +73,12 @@ public class VendingMachine {
         int inputForSecretMethods;
         switch (code) {
             case 1:
+                printVendingMachine();
+                break;
+            case 2:
+                printProducts(true);
+                break;
+            case 3:
                 System.out.print("Enter a code: ");
                 number = enterCode();
                 while (true) {
@@ -100,14 +117,14 @@ public class VendingMachine {
                     }
                 }
                 break;
-            case 2:
+            case 4:
                 System.out.println("You can add your money here.");
                 userbalance = Money.addMoney(userbalance);
                 break;
-            case 3:
+            case 5:
                 Money.showUserbalance(userbalance);
                 break;
-            case 4:
+            case 6:
                 System.out.println("System is shutting down...");
                 sleep(3000);
                 System.exit(1);
@@ -230,8 +247,6 @@ public class VendingMachine {
             System.out.print("══╩");
         }
         System.out.println("══╝");
-
-        printProducts(true);
     }
 
     public int enterCode() {
@@ -428,7 +443,7 @@ public class VendingMachine {
         }
     }
 
-    public VendingMachine(int width, int height) {
+    public VendingMachine(int width, int height) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         this.width = width;
         this.height = height;
     }

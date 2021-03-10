@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a251e7-9de3-4e7b-8207-d2afac2fcf4a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/PlaySound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Starter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
     </list>
     <list id="39cf3e9d-0b57-4f84-a922-b22fa16049ed" name="Changes by lazar" comment="" />
@@ -61,6 +63,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -82,7 +97,7 @@
       <workItem from="1614757234955" duration="12624000" />
       <workItem from="1614844916709" duration="60000" />
       <workItem from="1614845041121" duration="6077000" />
-      <workItem from="1615360963748" duration="8620000" />
+      <workItem from="1615360963748" duration="11969000" />
     </task>
     <servers />
   </component>
@@ -113,26 +128,26 @@
       <screen x="0" y="0" width="1707" height="960" />
     </state>
     <state x="1087" y="200" key="#com.intellij.ide.util.MemberChooser/0.0.1707.960@0.0.1707.960" timestamp="1614954525334" />
-    <state width="1279" height="458" key="GridCell.Tab.0.bottom" timestamp="1615370986858">
+    <state width="1279" height="648" key="GridCell.Tab.0.bottom" timestamp="1615374556117">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1279" height="780" key="GridCell.Tab.0.bottom/0.0.1707.960@0.0.1707.960" timestamp="1614957607884" />
-    <state width="1279" height="458" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1615370986858" />
-    <state width="1279" height="458" key="GridCell.Tab.0.center" timestamp="1615370986858">
+    <state width="1279" height="648" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1615374556117" />
+    <state width="1279" height="648" key="GridCell.Tab.0.center" timestamp="1615374556117">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1279" height="780" key="GridCell.Tab.0.center/0.0.1707.960@0.0.1707.960" timestamp="1614957607884" />
-    <state width="1279" height="458" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1615370986858" />
-    <state width="1279" height="458" key="GridCell.Tab.0.left" timestamp="1615370986857">
+    <state width="1279" height="648" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1615374556117" />
+    <state width="1279" height="648" key="GridCell.Tab.0.left" timestamp="1615374556117">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1279" height="780" key="GridCell.Tab.0.left/0.0.1707.960@0.0.1707.960" timestamp="1614957607884" />
-    <state width="1279" height="458" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1615370986857" />
-    <state width="1279" height="458" key="GridCell.Tab.0.right" timestamp="1615370986858">
+    <state width="1279" height="648" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1615374556117" />
+    <state width="1279" height="648" key="GridCell.Tab.0.right" timestamp="1615374556117">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="1279" height="780" key="GridCell.Tab.0.right/0.0.1707.960@0.0.1707.960" timestamp="1614957607884" />
-    <state width="1279" height="458" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1615370986858" />
+    <state width="1279" height="648" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1615374556117" />
     <state width="1279" height="458" key="GridCell.Tab.1.bottom" timestamp="1615370986858">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
