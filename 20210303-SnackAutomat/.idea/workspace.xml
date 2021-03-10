@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5a251e7-9de3-4e7b-8207-d2afac2fcf4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Color.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/Money.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/Money.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/Starter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/Starter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/20210303-SnackAutomat/ch/noseryoung/blj/VendingMachine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/productAmount.txt" beforeDir="false" afterPath="$PROJECT_DIR$/productAmount.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/PlaySound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/PlaySound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Starter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
     </list>
     <list id="39cf3e9d-0b57-4f84-a922-b22fa16049ed" name="Changes by lazar" comment="" />
     <list id="c0192afc-69c7-40e8-995c-dba0dd6d0788" name="Changes by Sascha Buthelezi" comment="" />
@@ -74,19 +64,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -110,6 +87,7 @@
       <workItem from="1614845041121" duration="6077000" />
       <workItem from="1615360963748" duration="20543000" />
       <workItem from="1615396300819" duration="505000" />
+      <workItem from="1615410821378" duration="128000" />
     </task>
     <servers />
   </component>
@@ -136,38 +114,38 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1564" height="1304" key="GridCell.Tab.0.bottom" timestamp="1615406774575">
+    <state width="1564" height="371" key="GridCell.Tab.0.bottom" timestamp="1615408920308">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1564" height="1304" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1615406774575" />
-    <state width="1564" height="1304" key="GridCell.Tab.0.center" timestamp="1615406774575">
+    <state width="1564" height="371" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1615408920308" />
+    <state width="1564" height="371" key="GridCell.Tab.0.center" timestamp="1615408920308">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1564" height="1304" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1615406774575" />
-    <state width="1564" height="1304" key="GridCell.Tab.0.left" timestamp="1615406774575">
+    <state width="1564" height="371" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1615408920308" />
+    <state width="1564" height="371" key="GridCell.Tab.0.left" timestamp="1615408920308">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1564" height="1304" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1615406774575" />
-    <state width="1564" height="1304" key="GridCell.Tab.0.right" timestamp="1615406774575">
+    <state width="1564" height="371" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1615408920308" />
+    <state width="1564" height="371" key="GridCell.Tab.0.right" timestamp="1615408920308">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1564" height="1304" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1615406774575" />
-    <state width="1564" height="564" key="GridCell.Tab.1.bottom" timestamp="1615404029297">
+    <state width="1564" height="371" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1615408920308" />
+    <state width="1564" height="564" key="GridCell.Tab.1.bottom" timestamp="1615408920306">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1564" height="564" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1615404029297" />
-    <state width="1564" height="564" key="GridCell.Tab.1.center" timestamp="1615404029297">
+    <state width="1564" height="564" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1615408920306" />
+    <state width="1564" height="564" key="GridCell.Tab.1.center" timestamp="1615408920305">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1564" height="564" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1615404029297" />
-    <state width="1564" height="564" key="GridCell.Tab.1.left" timestamp="1615404029297">
+    <state width="1564" height="564" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1615408920305" />
+    <state width="1564" height="564" key="GridCell.Tab.1.left" timestamp="1615408920305">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1564" height="564" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1615404029297" />
-    <state width="1564" height="564" key="GridCell.Tab.1.right" timestamp="1615404029297">
+    <state width="1564" height="564" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1615408920305" />
+    <state width="1564" height="564" key="GridCell.Tab.1.right" timestamp="1615408920305">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="1564" height="564" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1615404029297" />
+    <state width="1564" height="564" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1615408920305" />
     <state x="1441" y="330" width="672" height="678" key="search.everywhere.popup" timestamp="1615403091585">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
