@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c5a251e7-9de3-4e7b-8207-d2afac2fcf4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/PlaySound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/PlaySound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch/noseryoung/blj/VendingMachine.java" afterDir="false" />
     </list>
     <list id="39cf3e9d-0b57-4f84-a922-b22fa16049ed" name="Changes by lazar" comment="" />
@@ -62,19 +60,6 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

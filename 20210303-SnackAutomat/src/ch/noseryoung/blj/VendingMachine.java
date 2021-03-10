@@ -495,6 +495,63 @@ public class VendingMachine {
         }
     }
 
+    public void changeProduct(ArrayList<Product> Products) { // ----- SECRET KEY -----
+        char answerToChangeProduct = ' ';
+        int newProductNumber = 0;
+        System.out.println("You can change the product now...");
+        printProducts(true);
+        int number = 0;
+        while (true) {
+            try {
+                System.out.print("\nWhat's the product number of the product you want to change: ");
+                number = scan.nextInt();
+                System.out.println("You entered this number: " + number + "\nProduct name: " + Products.get(number).getName());
+                break;
+            } catch (Exception e) {
+                System.out.print("Something went wrong with the product number. Try again.\n");
+                scan.nextLine();
+            }
+        }
+        while (true) {
+            try {
+                System.out.println("Are you sure you want to change the product? (Y / N): ");
+                answerToChangeProduct = scan.next().charAt(0);
+                if (answerToChangeProduct == 'y' || answerToChangeProduct == 'Y' || answerToChangeProduct == 'n' ||
+                        answerToChangeProduct == 'N') {
+                    break;
+                } else {
+                    System.out.println("Please enter a valid input!");
+                }
+            } catch (Exception e) {
+                System.out.print("Something went wrong with your answer. Try again.\n");
+                scan.nextLine();
+            }
+        }
+        int i = 0;
+        while (true) {
+            try {
+                if (answerToChangeProduct == 'Y' || answerToChangeProduct == 'y') {
+                    printProducts(false);
+                    System.out.print("Enter the number of the new product: ");
+                    newProductNumber = scan.nextInt();
+                    int tempProductNumber = Products.get(number).getProduct_code();
+                    Products.set(number, Products.get(newProductNumber));
+                    Products.get(number).setProduct_code(tempProductNumber);
+                    System.out.println("You successfully changed the product to: " + Products.get(newProductNumber).getName());
+                    sleep(4000);
+                    break;
+                } else if (answerToChangeProduct == 'N' || answerToChangeProduct == 'n') {
+                    System.out.println("Ok leaving secret methods...");
+                    sleep(4000);
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println("Something went wrong with your answer. Try again.\n");
+                scan.nextLine();
+            }
+        }
+    }
+
     public VendingMachine(int width, int height) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         this.width = width;
         this.height = height;
