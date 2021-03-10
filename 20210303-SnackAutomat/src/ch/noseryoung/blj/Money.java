@@ -35,8 +35,7 @@ public class Money {
                     break;
                 } else if (cancel == 'N' || cancel == 'n') {
                     System.out.println("Canceling ... ");
-
-
+                     VendingMachine.sleep(3000);
                     //canceling value
                     return -1;
                 }

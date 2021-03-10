@@ -42,35 +42,51 @@ public class VendingMachine {
 
     public void run() {
         printVendingMachine();
+        createMenu(number);
+    }
+
+    public void createMenu(int code) {
+        System.out.println("Menu:");
+        System.out.println("[1] Enter code\n[2] Leave vending machine");
+        System.out.print("Choose: ");
+        code = sc.nextInt();
         int inputForSecretMethods;
-        number = enterCode();
-        if (checkIfNumIsShutDown(number)) {
-            System.exit(1);
-        } else if (checkSecretKey(number)) {
-            System.out.println("You found out the secret");
-            System.out.println("Change item price \t\t[1]");
-            System.out.println("Change product \t\t\t[2]");
-            System.out.println("Refill vending machine \t[3]");
-            System.out.print("Choose: ");
-            inputForSecretMethods = sc.nextInt();
-            switch (inputForSecretMethods) {
-                case 1:
-                    changeProductPrice(products);
-                    break;
-                case 2:
-                    System.out.println("Change product...");
-                    break;
-                case 3:
-                    refillVendingMachine();
-                    System.out.println("Vending machine is getting filled");
-                    sleep(4000);
-                    break;
-            }
-        } else if (number < width * height || number >= 0) {
-            payedproduct = Money.displaySingleProductPrice(number, products);
-            if (payedproduct == -1) {/*if payed product is -1 then do nothing*/ } else {
-                giveOutProducts(payedproduct);
-            }
+        switch (code) {
+            case 1:
+                System.out.print("Enter a code: ");
+                number = enterCode();
+                if (checkSecretKey(number)) {
+                    System.out.println("You found out the secret");
+                    System.out.println("Change item price \t\t[1]");
+                    System.out.println("Change product \t\t\t[2]");
+                    System.out.println("Refill vending machine \t[3]");
+                    System.out.print("Choose: ");
+                    inputForSecretMethods = sc.nextInt();
+                    switch (inputForSecretMethods) {
+                        case 1:
+                            changeProductPrice(products);
+                            break;
+                        case 2:
+                            System.out.println("Change product...");
+                            break;
+                        case 3:
+                            refillVendingMachine();
+                            System.out.println("Vending machine is getting filled");
+                            sleep(4000);
+                            break;
+                    }
+                } else if (number < width * height || number >= 0) {
+                    payedproduct = Money.displaySingleProductPrice(number, products);
+                    if (payedproduct == -1) {/*if payed product is -1 then do nothing*/ } else {
+                        giveOutProducts(payedproduct);
+                    }
+                }
+                break;
+            case 2:
+                System.out.println("System is shutting down...");
+                sleep(3000);
+                System.exit(1);
+                break;
         }
     }
 
@@ -215,16 +231,6 @@ public class VendingMachine {
         }
     }
 
-    public boolean checkIfNumIsShutDown(int num) {
-        if (num == 9999) {
-            System.out.println("System is shutting down...");
-            sleep(3000);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public void printToFile() {
         try {
             myWriter = new FileWriter("productAmount.txt", false);
@@ -298,7 +304,7 @@ public class VendingMachine {
     public void giveOutProducts(int number) {
         int stuck = 0;
         if (products.get(number).getAmount() > 0) {
-            if (generate.nextInt(2) != 0) {
+            if (generate.nextInt(100) != 0) {
                 person.setInventory(products.get(number));
                 products.get(number).setAmount(products.get(number).getAmount() - 1);
                 System.out.println("Your Product is on the way!");
