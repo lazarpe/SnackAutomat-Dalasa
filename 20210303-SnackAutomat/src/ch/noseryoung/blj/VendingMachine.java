@@ -103,6 +103,7 @@ public class VendingMachine {
                                     break;
                                 case 2:
                                     System.out.println("Change product...");
+                                    changeProduct(products);
                                     break;
                                 case 3:
                                     System.out.println("Loading to file...");
@@ -548,6 +549,12 @@ public class VendingMachine {
             } catch (Exception e) {
                 System.out.println("Something went wrong with your answer. Try again.\n");
                 scan.nextLine();
+            }
+        }
+        for (int k = 0; k < height; k++) {
+            for (int l = 0; l < width; l++) {
+                addedProducts[l][k] = products.get(i);
+                i++;
             }
         }
     }
