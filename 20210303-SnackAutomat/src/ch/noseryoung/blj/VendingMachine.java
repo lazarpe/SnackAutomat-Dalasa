@@ -11,7 +11,7 @@ import java.util.Scanner;
 /****
  ---------------------------------------------------------------------
  Anwendung: Objektbasiert Programmieren NoserYoung
- Author: Davide
+ Author: Davide, Lazar, Sascha
  Datum: 03.03.2021
  Zeit: 15:11
  Projekt: 20210303-SnackAutomat

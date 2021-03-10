@@ -9,6 +9,7 @@ public class Starter {
         printTitle();
         VendingMachine vendingMachine = new VendingMachine(10, 5);
         vendingMachine.fillVendingMachine();
+        //vendingMachine.printToFile();
         vendingMachine.loadFromFile();
         //vendingMachine.printToFile();
         while (true) {
