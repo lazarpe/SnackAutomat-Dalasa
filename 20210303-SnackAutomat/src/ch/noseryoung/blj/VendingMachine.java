@@ -48,35 +48,52 @@ public class VendingMachine {
 
     public void createMenu(int code) {
         System.out.println("Menu:");
-        System.out.println("[1] Enter product code\n[2] Insert money\n[3] Show user balance\n[4] Leave vending machine");
-        System.out.print("Choose: ");
-        code = scan.nextInt();
+        while (true) {
+            try {
+                System.out.println("[1] Enter product code\n[2] Insert money\n[3] Show user balance\n[4] Leave vending machine");
+                System.out.print("Choose: ");
+                code = scan.nextInt();
+                break;
+            } catch (Exception e) {
+                System.out.println("\nInvalid input. Try again: ");
+                scan.nextLine();
+            }
+        }
         int inputForSecretMethods;
         switch (code) {
             case 1:
                 System.out.print("Enter a code: ");
                 number = enterCode();
-                if (checkSecretKey(number)) {
-                    System.out.println("You found out the secret");
-                    System.out.println("Change item price \t\t[1]");
-                    System.out.println("Change product \t\t\t[2]");
-                    System.out.println("Refill vending machine \t[3]");
-                    System.out.print("Choose: ");
-                    inputForSecretMethods = scan.nextInt();
-                    switch (inputForSecretMethods) {
-                        case 1:
-                            changeProductPrice(products);
+                while (true) {
+                    try {
+                        if (checkSecretKey(number)) {
+                            System.out.println("You found out the secret");
+                            System.out.println("Change item price \t\t[1]");
+                            System.out.println("Change product \t\t\t[2]");
+                            System.out.println("Refill vending machine \t[3]");
+                            System.out.print("Choose: ");
+                            inputForSecretMethods = scan.nextInt();
+                            switch (inputForSecretMethods) {
+                                case 1:
+                                    changeProductPrice(products);
+                                    break;
+                                case 2:
+                                    System.out.println("Change product...");
+                                    break;
+                                case 3:
+                                    refillVendingMachine();
+                                    System.out.println("Vending machine is getting filled");
+                                    sleep(4000);
+                                    break;
+                            }
                             break;
-                        case 2:
-                            System.out.println("Change product...");
-                            break;
-                        case 3:
-                            refillVendingMachine();
-                            System.out.println("Vending machine is getting filled");
-                            sleep(4000);
-                            break;
+                        }
+                    } catch (Exception e) {
+                        System.out.println("\nInvalid input. Try again: ");
+                        scan.nextLine();
                     }
-                } else if (number < width * height || number >= 0) {
+                }
+                if (number < width * height && number >= 0) {
                     payedproduct = Money.displaySingleProductPrice(number, products, userbalance);
                     if (payedproduct == -1) {/*if payed product is -1 then do nothing*/ } else {
                         giveOutProducts(payedproduct);
