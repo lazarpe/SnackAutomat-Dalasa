@@ -14,20 +14,15 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  **/
 
 public class PlaySound {
-    Long currentFrame;
     Clip clip;
     String status;
 
     AudioInputStream audioInputStream;
     static String filePath;
 
-    public PlaySound()
-            throws UnsupportedAudioFileException,
-            IOException, LineUnavailableException
-    {
+    public PlaySound() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         filePath = "Music/Dalasa-Jingle.wav";
-        audioInputStream =
-                AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
+        audioInputStream = AudioSystem.getAudioInputStream(new File(filePath).getAbsoluteFile());
         clip = AudioSystem.getClip();
         clip.open(audioInputStream);
         clip.loop(Clip.LOOP_CONTINUOUSLY);

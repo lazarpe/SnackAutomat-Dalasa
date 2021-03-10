@@ -60,7 +60,9 @@ public class VendingMachine {
                         "[3] Enter product code\n" +
                         "[4] Insert money\n" +
                         "[5] Show user balance\n" +
-                        "[6] Leave vending machine");
+                        "[6] Turn music off\n" +
+                        "[7] Turn music on\n" +
+                        "[8] Leave vending machine");
 
                 System.out.print("Choose: ");
                 code = scan.nextInt();
@@ -84,10 +86,17 @@ public class VendingMachine {
                 while (true) {
                     try {
                         if (checkSecretKey(number)) {
-                            System.out.println("You found out the secret");
-                            System.out.println("Change item price \t\t[1]");
-                            System.out.println("Change product \t\t\t[2]");
-                            System.out.println("Refill vending machine \t[3]");
+                            System.err.print("                             _   \n" +
+                                    "                            | |  \n" +
+                                    " ___   ___   ___  _ __  ___ | |_ \n" +
+                                    "/ __| / _ \\ / __|| '__|/ _ \\| __|\n" +
+                                    "\\__ \\|  __/| (__ | |  |  __/| |_ \n" +
+                                    "|___/ \\___| \\___||_|   \\___| \\__|");
+                            System.out.println("\n\n[1] Change item price ");
+                            System.out.println("[2] Change product ");
+                            System.out.println("[3] Loading products to file");
+                            System.out.println("[4] Loading products from file");
+                            System.out.println("[5] Refill vending machine");
                             System.out.print("Choose: ");
                             inputForSecretMethods = scan.nextInt();
                             switch (inputForSecretMethods) {
@@ -98,8 +107,18 @@ public class VendingMachine {
                                     System.out.println("Change product...");
                                     break;
                                 case 3:
+                                    System.out.println("Loading to file...");
+                                    sleep(2000);
+                                    printToFile();
+                                    break;
+                                case 4:
+                                    System.out.println("Loading from file...");
+                                    sleep(2000);
+                                    loadFromFile();
+                                    break;
+                                case 5:
                                     refillVendingMachine();
-                                    System.out.println("Vending machine is getting filled");
+                                    System.out.println("Vending machine is getting filled...");
                                     sleep(4000);
                                     break;
                             }
@@ -125,6 +144,10 @@ public class VendingMachine {
                 Money.showUserbalance(userbalance);
                 break;
             case 6:
+                break;
+            case 7:
+                break;
+            case 8:
                 System.out.println("System is shutting down...");
                 sleep(3000);
                 System.exit(1);
