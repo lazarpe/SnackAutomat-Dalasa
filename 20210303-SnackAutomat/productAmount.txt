@@ -1,200 +1,200 @@
-Apple spritzer
-2.97
+Gummy Bears
+8.85
 0
-7
-Chocolate
-2.22
-1
-1
-Monster Energy
-6.72
-2
-2
-Jelly Babies
+0
+Chips
 3.1
+1
+0
+Milk
+2.85
+2
+8
+Chocolate
+9.55
 3
-6
-Pudding
-2.91
+3
+Coffee
+5.85
 4
-6
-Fanta
-4.94
+0
+Crackers
+3.33
 5
 3
-Vanillecake
-4.22
+Apple spritzer
+7.28
 6
-8
-Capri Sun
-9.72
+5
+Chocolate
+6.83
 7
-3
-Chips
-4.28
+0
+Kägi Fret
+7.94
 8
-7
-Gummy Bears
-7.39
+1
+Twixx
+8.73
 9
-2
-Coffee
-2.92
+3
+Energy Bar
+7.47
 10
-2
+7
 Cola
-1.39
+5.57
 11
 6
-Coffee
-6.83
+Chips
+5.02
 12
-6
-Crackers
-2.58
+3
+Capri Sun
+2.55
 13
-7
-Gummy Bears
-7.24
+6
+Rivella
+6.17
 14
-9
-Red Bull
-1.54
+5
+Capri Sun
+5.94
 15
 4
-Cola Zero
-9.67
+Cola
+7.86
 16
-7
-Jelly Babies
-4.19
+6
+Twixx
+4.31
 17
-2
-Pudding
-4.45
+8
+Crackers
+5.79
 18
-0
-Pudding
-5.4
+6
+Snickers
+3.22
 19
-3
-Vanillecake
-2.6
+6
+Chips
+3.25
 20
-5
-Milk
-4.75
-21
-8
-M & M's
-9.82
-22
-8
-Chocolate
-1.33
-23
 9
-Energy Bar
-8.63
-24
-0
-Energy Bar
-8.98
-25
-1
+Ice Tea
+8.83
+21
+4
 Pudding
-4.46
+1.51
+22
+9
+Apple spritzer
+1.54
+23
+2
+Maltesers
+6.61
+24
+8
+Waffles
+3.83
+25
+6
+Fanta
+1.65
 26
 3
-M & M's
-6.25
-27
-1
-Rivella
-5.97
-28
-9
-Cola
-4.13
-29
-9
-Cola
-4.65
-30
-9
-Gummy Bears
-9.96
-31
-1
-Vanillecake
-7.18
-32
-9
-Rivella
-2.59
-33
-7
-Gummy Bears
-1.49
-34
-0
-Pudding
-7.46
-35
-6
-Mars
-7.83
-36
-5
-Cola
-3.52
-37
-1
-Coffee
-6.66
-38
-0
-Coffee
-6.15
-39
-9
-Chocolate
-7.8
-40
-3
-Crackers
-3.38
-41
-1
-M & M's
-8.01
-42
-6
 Donut
-8.31
-43
-1
-Chocolate
-8.51
-44
+5.35
+27
+3
+Chips
+3.1
+28
+8
+Twixx
+8.47
+29
+0
+Crackers
+7.39
+30
+5
+Gummy Bears
+1.97
+31
+4
+Cola
+2.87
+32
+3
+Gummy Bears
+3.79
+33
 6
-Milk
-5.15
-45
+M & M's
+4.14
+34
+5
+M & M's
+9.16
+35
 7
-Fanta
-5.97
-46
-2
-Maltesers
-2.09
-47
-0
-Maltesers
-7.73
-48
+Cola Zero
+9.84
+36
+7
+M & M's
+9.25
+37
 6
-Capri Sun
-7.67
+Jelly Babies
+8.56
+38
+9
+Crackers
+6.88
+39
+4
+Monster Energy
+8.25
+40
+8
+Twixx
+2.72
+41
+8
+Mars
+7.95
+42
+1
+Chips
+2.59
+43
+3
+Snickers
+9.87
+44
+8
+Water
+7.87
+45
+6
+Monster Energy
+3.57
+46
+6
+Monster Energy
+9.19
+47
+7
+Cola Zero
+1.85
+48
+8
+Crackers
+8.92
 49
-0
+7

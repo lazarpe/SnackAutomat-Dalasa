@@ -1,7 +1,5 @@
 package ch.noseryoung.blj;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 
 /**
@@ -18,10 +16,14 @@ public class Person {
     }
 
     public void showInventory() {
-        for (Product myItem : myItems) {
+        if (myItems.size() <= 0) {
+            System.out.println("No items");
+        } else {
             System.out.println("Your Items:");
-            System.out.println(myItem.getName());
-            VendingMachine.sleep(3000);
+            for (Product myItem : myItems) {
+                System.out.println(" - " + myItem.getName());
+            }
+            VendingMachine.sleep(1800);
         }
     }
 }

@@ -11,7 +11,6 @@ import javax.sound.sampled.*;
 
 public class PlaySound {
     Clip clip;
-    String status = "mute";
 
     AudioInputStream audioInputStream;
     static String filePath;
@@ -26,11 +25,9 @@ public class PlaySound {
 
     public void playMusic() {
         clip.start();
-        status = "play";
     }
 
     public void stopMusic() {
         clip.stop();
-        status = "mute";
     }
 }

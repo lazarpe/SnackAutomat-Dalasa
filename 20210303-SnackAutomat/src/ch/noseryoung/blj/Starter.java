@@ -9,16 +9,16 @@ public class Starter {
         printTitle();
         VendingMachine vendingMachine = new VendingMachine(10, 5);
         vendingMachine.fillVendingMachine();
-        //vendingMachine.printToFile();
-        vendingMachine.loadFromFile();
-        //vendingMachine.printToFile();
+        vendingMachine.printToFile();
         while (true) {
             vendingMachine.run();
         }
     }
 
     public static void printTitle() {
-        System.err.println("""
+        String ANSI_RESET = "\u001B[0m";
+        String ANSI_CYAN = "\u001B[36m";
+        System.out.println(ANSI_CYAN + """
                 
                 ██████╗  █████╗   ██╗       █████╗  ███████╗ █████╗\s
                 ██╔══██╗ ██╔══██╗ ██║      ██╔══██╗ ██╔════╝ ██╔══██╗
@@ -26,6 +26,6 @@ public class Starter {
                 ██║  ██║ ██╔══██║ ██║      ██╔══██║ ╚════██║ ██╔══██║
                 ██████╔╝ ██║  ██║ ███████╗ ██║  ██║ ███████║ ██║  ██║
                 ╚═════╝  ╚═╝  ╚═╝ ╚══════╝ ╚═╝  ╚═╝ ╚══════╝ ╚═╝  ╚═╝
-                """);
+                """ + ANSI_RESET);
     }
 }
