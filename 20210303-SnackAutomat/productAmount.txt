@@ -1,200 +1,200 @@
-Gummy Bears
-8.85
+Kägi Fret
+8.93
 0
-0
-Chips
-3.1
+5
+Twixx
+3.66
 1
+4
+Water
+9.23
+2
+6
+Milk
+5.19
+3
+7
+Fanta
+7.71
+4
 0
 Milk
-2.85
-2
-8
-Chocolate
-9.55
-3
-3
-Coffee
-5.85
+1.08
+5
 4
-0
-Crackers
-3.33
-5
-3
-Apple spritzer
-7.28
+Mars
+6.43
 6
-5
-Chocolate
-6.83
+4
+Monster Energy
+4.41
 7
-0
-Kägi Fret
-7.94
+5
+Cola Zero
+7.45
 8
-1
-Twixx
-8.73
+3
+Mars
+7.1
 9
 3
-Energy Bar
-7.47
+Capri Sun
+1.96
 10
-7
-Cola
-5.57
-11
-6
-Chips
-5.02
-12
-3
-Capri Sun
-2.55
-13
-6
-Rivella
-6.17
-14
 5
-Capri Sun
-5.94
-15
-4
-Cola
-7.86
-16
-6
 Twixx
-4.31
-17
-8
-Crackers
-5.79
-18
-6
-Snickers
-3.22
-19
-6
-Chips
-3.25
-20
-9
-Ice Tea
-8.83
-21
-4
-Pudding
-1.51
-22
-9
-Apple spritzer
-1.54
-23
-2
-Maltesers
-6.61
-24
-8
-Waffles
-3.83
-25
-6
-Fanta
-1.65
-26
+6.03
+11
 3
 Donut
-5.35
-27
-3
-Chips
-3.1
-28
+8.88
+12
 8
-Twixx
-8.47
-29
-0
-Crackers
-7.39
-30
-5
-Gummy Bears
-1.97
-31
-4
-Cola
-2.87
-32
+Monster Energy
+7.59
+13
+9
+Apple spritzer
+6.44
+14
+6
+Maltesers
+4.65
+15
+7
+Red Bull
+3.17
+16
 3
-Gummy Bears
-3.79
+Kägi Fret
+5.75
+17
+7
+Monster Energy
+8.68
+18
+3
+Cola
+1.38
+19
+7
+Kägi Fret
+5.21
+20
+6
+Pudding
+7.76
+21
+2
+Ice Tea
+4.27
+22
+3
+Red Bull
+7.45
+23
+0
+Mars
+7.56
+24
+7
+Jelly Babies
+4.75
+25
+8
+M & M's
+6.54
+26
+7
+Chocolate
+8.14
+27
+6
+Red Bull
+1.62
+28
+6
+Apple spritzer
+6.82
+29
+4
+Rivella
+1.72
+30
+1
+Rivella
+2.07
+31
+3
+Donut
+2.7
+32
+9
+Water
+6.24
 33
 6
-M & M's
-4.14
-34
-5
-M & M's
-9.16
-35
-7
-Cola Zero
-9.84
-36
-7
-M & M's
-9.25
-37
-6
-Jelly Babies
-8.56
-38
-9
-Crackers
-6.88
-39
-4
-Monster Energy
-8.25
-40
-8
-Twixx
-2.72
-41
-8
-Mars
-7.95
-42
-1
-Chips
-2.59
-43
-3
 Snickers
-9.87
-44
-8
+1.3
+34
+4
+Rivella
+8.21
+35
+6
+Twixx
+6.38
+36
+5
+Jelly Babies
+4.94
+37
+1
+Maltesers
+1.79
+38
+6
 Water
-7.87
+8.02
+39
+2
+Donut
+3.39
+40
+1
+Energy Bar
+9.48
+41
+1
+Waffles
+2.22
+42
+7
+Capri Sun
+9.31
+43
+2
+Jelly Babies
+5.21
+44
+7
+Snickers
+2.31
 45
-6
-Monster Energy
-3.57
+9
+Chips
+9.43
 46
-6
-Monster Energy
-9.19
+9
+Fanta
+7.74
 47
-7
-Cola Zero
-1.85
+2
+Gummy Bears
+3.52
 48
-8
-Crackers
-8.92
+1
+Waffles
+8.46
 49
-7
+1

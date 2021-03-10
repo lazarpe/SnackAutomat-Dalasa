@@ -10,10 +10,9 @@ import javax.sound.sampled.*;
  **/
 
 public class PlaySound {
-    Clip clip;
-
-    AudioInputStream audioInputStream;
-    static String filePath;
+    private Clip clip;
+    private AudioInputStream audioInputStream;
+    public static String filePath;
 
     public PlaySound() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         filePath = "Music/Dalasa-Jingle.wav";
