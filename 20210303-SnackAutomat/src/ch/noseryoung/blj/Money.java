@@ -15,23 +15,20 @@ import java.util.ArrayList;
  ----------------------------------------------------------------------
  ***/
 public class Money {
+    static Scanner scan = new Scanner(System.in);
 
-    public Money() {
-    }
-
-    public static int displaySingleProductPrice(int usernumber, ArrayList<Product> Products) {
+    public static int displaySingleProductPrice(int usernumber, ArrayList<Product> Products, double usersbalance) {
         char cancel;
         double productprice = Products.get(usernumber).getPrice();
-        Scanner cancelbutton = new Scanner(System.in);
         System.out.println("==========================================================");
         System.out.println("Item number : " + usernumber);
         System.out.println("This item costs : " + Products.get(usernumber).getPrice());
         while (true) {
             try {
                 System.out.println("Would you like to continue ? [ Y / N ] :");
-                cancel = cancelbutton.next().charAt(0);
+                cancel = scan.next().charAt(0);
                 if (cancel == 'Y' || cancel == 'y') {
-                    Money.payForProduct(productprice);              //pay product section
+                    Money.payForProduct(productprice, usersbalance);              //pay product section
                     break;
                 } else if (cancel == 'N' || cancel == 'n') {
                     System.out.println("Canceling ... ");
@@ -41,31 +38,27 @@ public class Money {
                 }
             } catch (Exception ignore) {
             }
-
             System.err.println("Invalid input");
         }
         return usernumber;
     }
 
-
-    public static double addMoney() {
-        Scanner coinreader = new Scanner(System.in);
+    public static double addMoney(double userbalance) {
         double usersbalance;
+        double addedNewBalance;
         System.out.print("How much will you be adding : ");
-        usersbalance = coinreader.nextDouble();
-        System.out.println(usersbalance);                       //users credit balance variable for calculating
-
-
+        addedNewBalance = scan.nextDouble();
+        System.out.println("You added " + addedNewBalance);
+        usersbalance = userbalance + addedNewBalance;
+        VendingMachine.sleep(3000);
         return usersbalance;
     }
 
-    public static double payForProduct(double productprice) {
-        Scanner coinreader = new Scanner(System.in);
+    public static double payForProduct(double productprice, double usersbalance) {
         double usercoins = 0;
         double coinsNeeded = productprice;
         while (coinsNeeded > 0) {
-            System.out.println("Insert Coins : ");
-            usercoins = coinreader.nextDouble();
+            usercoins = usersbalance;
             if (usercoins < 0){
                 usercoins = 0;
             }
@@ -79,6 +72,13 @@ public class Money {
         return productprice;
     }
 
+    public static void showUserbalance(double usersbalance) {
+        System.out.println("Your balance: " + usersbalance);
+        VendingMachine.sleep(3000);
+    }
+
+    public Money() {
+    }
 }
 
 

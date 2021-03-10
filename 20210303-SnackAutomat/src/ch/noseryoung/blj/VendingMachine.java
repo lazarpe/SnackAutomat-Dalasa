@@ -26,7 +26,8 @@ public class VendingMachine {
     private int number;
     private int payedproduct;  // after the payment
     private final long secretKey = 86420; // long because it's unsigned
-    Scanner sc = new Scanner(System.in);
+    private double userbalance;
+    Scanner scan = new Scanner(System.in);
     Random generate = new Random();
     FileWriter myWriter;
     String fileName = "productAmount.txt";
@@ -47,9 +48,9 @@ public class VendingMachine {
 
     public void createMenu(int code) {
         System.out.println("Menu:");
-        System.out.println("[1] Enter code\n[2] Leave vending machine");
+        System.out.println("[1] Enter product code\n[2] Insert money\n[3] Show user balance\n[4] Leave vending machine");
         System.out.print("Choose: ");
-        code = sc.nextInt();
+        code = scan.nextInt();
         int inputForSecretMethods;
         switch (code) {
             case 1:
@@ -61,7 +62,7 @@ public class VendingMachine {
                     System.out.println("Change product \t\t\t[2]");
                     System.out.println("Refill vending machine \t[3]");
                     System.out.print("Choose: ");
-                    inputForSecretMethods = sc.nextInt();
+                    inputForSecretMethods = scan.nextInt();
                     switch (inputForSecretMethods) {
                         case 1:
                             changeProductPrice(products);
@@ -76,13 +77,20 @@ public class VendingMachine {
                             break;
                     }
                 } else if (number < width * height || number >= 0) {
-                    payedproduct = Money.displaySingleProductPrice(number, products);
+                    payedproduct = Money.displaySingleProductPrice(number, products, userbalance);
                     if (payedproduct == -1) {/*if payed product is -1 then do nothing*/ } else {
                         giveOutProducts(payedproduct);
                     }
                 }
                 break;
             case 2:
+                System.out.println("You can add your money here.");
+                userbalance = Money.addMoney(userbalance);
+                break;
+            case 3:
+                Money.showUserbalance(userbalance);
+                break;
+            case 4:
                 System.out.println("System is shutting down...");
                 sleep(3000);
                 System.exit(1);
@@ -213,11 +221,11 @@ public class VendingMachine {
         int number;
         while (true) {
             try {
-                number = sc.nextInt();
+                number = scan.nextInt();
                 break;
             } catch (Exception e) {
                 System.out.println("Please try again");
-                sc.nextLine();
+                scan.nextLine();
             }
         }
         return number;
@@ -351,18 +359,18 @@ public class VendingMachine {
         while (true) {
             try {
                 System.out.print("\nWhat's the product number of the price you want to change: ");
-                number = sc.nextInt();
+                number = scan.nextInt();
                 System.out.println("You entered this number: " + number + "\nProduct name: " + Products.get(number).getName());
                 break;
             } catch (Exception e) {
                 System.out.print("Something went wrong with the product number. Try again.\n");
-                sc.nextLine();
+                scan.nextLine();
             }
         }
         while (true) {
             try {
                 System.out.println("Are you sure you want to change the price of this product? (Y / N): ");
-                answerToChangePrice = sc.next().charAt(0);
+                answerToChangePrice = scan.next().charAt(0);
                 if (answerToChangePrice == 'y' || answerToChangePrice == 'Y' || answerToChangePrice == 'n' ||
                         answerToChangePrice == 'N') {
                     break;
@@ -371,7 +379,7 @@ public class VendingMachine {
                 }
             } catch (Exception e) {
                 System.out.print("Something went wrong with your answer. Try again.\n");
-                sc.nextLine();
+                scan.nextLine();
             }
         }
         int i = 0;
@@ -379,7 +387,7 @@ public class VendingMachine {
             try {
                 if (answerToChangePrice == 'Y' || answerToChangePrice == 'y') {
                     System.out.print("Enter the new price: ");
-                    newPrice = sc.nextDouble();
+                    newPrice = scan.nextDouble();
                     Products.get(number).setPrice(newPrice);
                     System.out.println("You successfully changed the price to: " + Products.get(number).getPrice());
                     sleep(4000);
@@ -391,7 +399,7 @@ public class VendingMachine {
                 }
             } catch (Exception e) {
                 System.out.println("Something went wrong with your answer. Try again.\n");
-                sc.nextLine();
+                scan.nextLine();
             }
         }
 
