@@ -2,11 +2,7 @@ package ch.noseryoung.blj;
 
 import java.io.File;
 import java.io.IOException;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.sound.sampled.*;
 
 /**
  * Created by lazar on 10.03.2021.
@@ -27,8 +23,14 @@ public class PlaySound {
         clip.open(audioInputStream);
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
-    public void play() {
+
+    public void playMusic() {
         clip.start();
         status = "play";
+    }
+
+    public void stopMusic() {
+        clip.stop();
+        status = "mute";
     }
 }

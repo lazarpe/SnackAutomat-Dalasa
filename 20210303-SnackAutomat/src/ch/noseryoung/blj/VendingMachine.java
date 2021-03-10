@@ -43,11 +43,9 @@ public class VendingMachine {
     ArrayList<Product> products = new ArrayList<>();
     Product[][] addedProducts;
 
-    PlaySound audioPlayer = new PlaySound();
+    //PlaySound audioPlayer = new PlaySound();
 
     public void run() {
-        audioPlayer.play();
-        //printVendingMachine();
         createMenu(number);
     }
 
@@ -60,9 +58,8 @@ public class VendingMachine {
                         "[3] Enter product code\n" +
                         "[4] Insert money\n" +
                         "[5] Show user balance\n" +
-                        "[6] Turn music off\n" +
-                        "[7] Turn music on\n" +
-                        "[8] Leave vending machine");
+                        "[6] Music settings\n" +
+                        "[7] Leave vending machine");
 
                 System.out.print("Choose: ");
                 code = scan.nextInt();
@@ -86,17 +83,18 @@ public class VendingMachine {
                 while (true) {
                     try {
                         if (checkSecretKey(number)) {
-                            System.err.print("                             _   \n" +
-                                    "                            | |  \n" +
-                                    " ___   ___   ___  _ __  ___ | |_ \n" +
-                                    "/ __| / _ \\ / __|| '__|/ _ \\| __|\n" +
-                                    "\\__ \\|  __/| (__ | |  |  __/| |_ \n" +
-                                    "|___/ \\___| \\___||_|   \\___| \\__|");
+                            System.err.println("""
+                                                                | | \s
+                                     ___   ___   ___  _ __  ___ | |_\s
+                                    / __| / _ \\ / __|| '__|/ _ \\| __|
+                                    \\__ \\|  __/| (__ | |  |  __/| |_\s
+                                    |___/ \\___| \\___||_|   \\___| \\__|""");
                             System.out.println("\n\n[1] Change item price ");
                             System.out.println("[2] Change product ");
-                            System.out.println("[3] Loading products to file");
+                            System.out.println("[3] Saving products to file");
                             System.out.println("[4] Loading products from file");
                             System.out.println("[5] Refill vending machine");
+                            System.out.println("[6] Leave secret menu");
                             System.out.print("Choose: ");
                             inputForSecretMethods = scan.nextInt();
                             switch (inputForSecretMethods) {
@@ -121,7 +119,13 @@ public class VendingMachine {
                                     System.out.println("Vending machine is getting filled...");
                                     sleep(4000);
                                     break;
+                                case 6:
+                                    System.out.println("Leaving secret menu...\n");
+                                    sleep(1500);
+                                    break;
                             }
+                            break;
+                        } else {
                             break;
                         }
                     } catch (Exception e) {
@@ -144,11 +148,36 @@ public class VendingMachine {
                 Money.showUserbalance(userbalance);
                 break;
             case 6:
+                int musicControl = 0;
+                while (true) {
+                    try {
+                        System.out.println("Music settings\n" +
+                                "[1] Turn music on\n" +
+                                "[2] Turn music off\n" +
+                                "[3] Leave music settings");
+                        System.out.print("Choose: ");
+                        musicControl = scan.nextInt();
+                        switch (musicControl) {
+                            case 1:
+                                //audioPlayer.playMusic();
+                                continue;
+                            case 2:
+                                //audioPlayer.stopMusic();
+                                continue;
+                            case 3:
+                                System.out.println("\nLeaving music settings...\n");
+                                sleep(1500);
+                                break;
+                        }
+                        break;
+                    } catch (Exception e) {
+                        System.out.println("\nInvalid input. Try again: ");
+                        scan.nextLine();
+                    }
+                }
                 break;
             case 7:
-                break;
-            case 8:
-                System.out.println("System is shutting down...");
+                System.out.println("\nSystem is shutting down...");
                 sleep(3000);
                 System.exit(1);
                 break;
@@ -367,8 +396,8 @@ public class VendingMachine {
     public void giveOutProducts(int number) {
         int stuck = 0;
         if (products.get(number).getAmount() > 0) {
-            if (generate.nextInt(100) != 0) {
-                //person.setInventory(products.get(number));
+            if (generate.nextInt(10) != 0) {
+                person.setInventory(products.get(number));
                 products.get(number).setAmount(products.get(number).getAmount() - 1);
                 System.out.println("Your Product is on the way!");
             } else {

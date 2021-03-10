@@ -30,7 +30,7 @@ public class Money {
                 cancel = scan.next().charAt(0);
                 if (cancel == 'Y' || cancel == 'y') {
                     Money.payForProduct(productprice, usersbalance);              //pay product section
-                    break;
+                    return usernumber;
                 } else if (cancel == 'N' || cancel == 'n') {
                     System.out.println("Canceling ... ");
                     VendingMachine.sleep(3000);
@@ -41,7 +41,6 @@ public class Money {
             }
             System.err.println("Invalid input");
         }
-        return usernumber;
     }
 
     public static double addMoney(double userbalance) {
