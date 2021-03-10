@@ -58,8 +58,9 @@ public class VendingMachine {
                         "[3] Enter product code\n" +
                         "[4] Insert money\n" +
                         "[5] Show user balance\n" +
-                        "[6] Music settings\n" +
-                        "[7] Leave vending machine");
+                        "[6] Show users items\n" +
+                        "[7] Music settings\n" +
+                        "[8] Leave vending machine");
 
                 System.out.print("Choose: ");
                 code = scan.nextInt();
@@ -149,6 +150,9 @@ public class VendingMachine {
                 Money.showUserbalance();
                 break;
             case 6:
+                person.showInventory();
+                break;
+            case 7:
                 int musicControl = 0;
                 while (true) {
                     try {
@@ -177,7 +181,7 @@ public class VendingMachine {
                     }
                 }
                 break;
-            case 7:
+            case 8:
                 System.out.println("\nSystem is shutting down...");
                 sleep(3000);
                 System.exit(1);
@@ -431,6 +435,7 @@ public class VendingMachine {
 
         } else {
             System.out.println("This products is out of stock, return later for more!");
+            Money.addFastMoney(products.get(number).getPrice());
         }
         sleep(3000);
     }

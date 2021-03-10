@@ -31,8 +31,11 @@ public class Money {
                 System.out.println("Would you like to continue ? [ Y / N ] :");
                 cancel = scan.next().charAt(0);
                 if (cancel == 'Y' || cancel == 'y') {
-                    Money.payForProduct(productprice);              //pay product section
-                    return usernumber;
+                    if (payForProduct(productprice) == 1) {
+                        return usernumber;
+                    } else {
+                        return -1;
+                    }
                 } else if (cancel == 'N' || cancel == 'n') {
                     System.out.println("Canceling ... ");
                     VendingMachine.sleep(3000);
@@ -51,9 +54,8 @@ public class Money {
             try {
                 System.out.print("How much will you be adding : ");
                 addedNewBalance = scan.nextDouble();
-                if (addedNewBalance <= 0) {
+                if (addedNewBalance < 0) {
                     System.out.println("Invalid amount... ");
-                    continue;
                 } else {
                     System.out.println("You added " + addedNewBalance);
                     usersbalance = usersbalance + addedNewBalance;
@@ -69,36 +71,44 @@ public class Money {
         return usersbalance;
     }
 
-    public static double payForProduct(double productprice) {
+    public static int payForProduct(double productprice) {
         double returnMoney = 0;
         double coinsNeeded = productprice;
         while (coinsNeeded > 0) {
             if (usersbalance <= 0) {
                 usersbalance = 0;
                 System.out.println("Your balance is low");
-                break;
+                return -1;
             }
             coinsNeeded -= usersbalance;
             if (coinsNeeded <= 0) {
                 returnMoney = Math.abs(coinsNeeded);
                 returnMoney = Double.parseDouble(df.format(returnMoney));
                 System.out.println("Your change: " + returnMoney + " €");
-                break;
+                usersbalance -= productprice;
+                return 1;
             }
         }
-        usersbalance -= productprice;
         setBalance(usersbalance);
         System.out.println("Product cost: " + productprice + " €");
-        return productprice;
+        return 0;
     }
 
     public static void showUserbalance() {
-        System.out.println("Your balance: " + usersbalance + " €");
+        System.out.println("Your balance: " + Double.parseDouble(df.format(usersbalance)) + " €");
         VendingMachine.sleep(3000);
     }
 
-    public static void setBalance(double balance){
+    public static void setBalance(double balance) {
         usersbalance = Double.parseDouble(df.format(balance));
+    }
+
+    /**
+     * This is a method to help to showUserbalance,so it doesnt change the usersbalance if he has no money
+     * @param money
+     */
+    public static void addFastMoney(double money) {
+        usersbalance += money;
     }
 
     public Money() {
