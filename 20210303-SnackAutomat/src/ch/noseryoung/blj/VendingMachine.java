@@ -313,7 +313,7 @@ public class VendingMachine {
         int stuck = 0;
         if (products.get(number).getAmount() > 0) {
             if (generate.nextInt(100) != 0) {
-                person.setInventory(products.get(number));
+                //person.setInventory(products.get(number));
                 products.get(number).setAmount(products.get(number).getAmount() - 1);
                 System.out.println("Your Product is on the way!");
             } else {

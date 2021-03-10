@@ -1,5 +1,6 @@
 package ch.noseryoung.blj;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -32,7 +33,7 @@ public class Money {
                     break;
                 } else if (cancel == 'N' || cancel == 'n') {
                     System.out.println("Canceling ... ");
-                     VendingMachine.sleep(3000);
+                    VendingMachine.sleep(3000);
                     //canceling value
                     return -1;
                 }
@@ -46,34 +47,51 @@ public class Money {
     public static double addMoney(double userbalance) {
         double usersbalance;
         double addedNewBalance;
-        System.out.print("How much will you be adding : ");
-        addedNewBalance = scan.nextDouble();
-        System.out.println("You added " + addedNewBalance);
-        usersbalance = userbalance + addedNewBalance;
+        while (true) {
+            try {
+                System.out.print("How much will you be adding : ");
+                addedNewBalance = scan.nextDouble();
+                if (addedNewBalance <= 0) {
+                    System.out.println("Invalid amount... ");
+                    continue;
+                } else {
+                    System.out.println("You added " + addedNewBalance);
+                    usersbalance = userbalance + addedNewBalance;
+                    break;
+                }
+            } catch (Exception e) {
+                System.out.println("Invalid input. Please enter a number above 0");
+                scan.nextLine();
+            }
+        }
         VendingMachine.sleep(3000);
         return usersbalance;
     }
 
-    public static double payForProduct(double productprice, double usersbalance) {
-        double usercoins = 0;
+    public static double payForProduct(double productprice, double userbalance) {
+        DecimalFormat df = new DecimalFormat("0.00");
+        double returnMoney = 0;
+        returnMoney = Double.parseDouble(df.format(returnMoney));
         double coinsNeeded = productprice;
         while (coinsNeeded > 0) {
-            usercoins = usersbalance;
-            if (usercoins < 0){
-                usercoins = 0;
+            if (userbalance < 0) {
+                userbalance = 0;
+                System.out.println("Your balance is low");
+                break;
             }
-            coinsNeeded = coinsNeeded - usercoins;
+            coinsNeeded -= userbalance;
+            if (coinsNeeded < 0) {
+                returnMoney = Math.abs(coinsNeeded);
+                System.out.println("Your change: " + returnMoney);
+                break;
+            }
         }
-        if (coinsNeeded < 0) {
-            usercoins = coinsNeeded + usercoins;
-        }
-        System.out.println("Your leftover coins: " + usercoins);
         System.out.println("Product cost: " + productprice);
         return productprice;
     }
 
-    public static void showUserbalance(double usersbalance) {
-        System.out.println("Your balance: " + usersbalance);
+    public static void showUserbalance(double userbalance) {
+        System.out.println("Your balance: " + userbalance);
         VendingMachine.sleep(3000);
     }
 
