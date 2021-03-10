@@ -25,6 +25,7 @@ public class VendingMachine {
     private final int height;
     private final int min = 1;
     private final int max = 10;
+    private int filled = 0;
     private int number;
     private int payedproduct;  // after the payment
     private final long secretKey = 86420; // long because it's unsigned
@@ -211,6 +212,7 @@ public class VendingMachine {
                 i++;
             }
         }
+        filled = 1;
     }
 
     public void printProducts(boolean advanced) {
@@ -392,6 +394,7 @@ public class VendingMachine {
                 } catch (IOException e) {
                 }
         }
+        filled = 1;
     }
 
     public boolean checkSecretKey(int num) {
