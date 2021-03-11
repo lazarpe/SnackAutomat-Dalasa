@@ -8,12 +8,12 @@ public class Starter {
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         printTitle();
         VendingMachine vendingMachine = new VendingMachine(10, 5);
-        vendingMachine.fillVendingMachine();
-        //vendingMachine.printToFile();
-        vendingMachine.loadFromFile();
-        //vendingMachine.printToFile();
         while (true) {
-            vendingMachine.run();
+            try {
+                vendingMachine.run();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 

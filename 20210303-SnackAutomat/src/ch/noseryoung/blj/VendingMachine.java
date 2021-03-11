@@ -96,7 +96,8 @@ public class VendingMachine {
                             System.out.println("[3] Saving products to file");
                             System.out.println("[4] Loading products from file");
                             System.out.println("[5] Refill vending machine");
-                            System.out.println("[6] Leave secret menu");
+                            System.out.println("[6] Fill vending machine");
+                            System.out.println("[7] Leave secret menu");
                             System.out.print("Choose: ");
                             inputForSecretMethods = scan.nextInt();
                             switch (inputForSecretMethods) {
@@ -108,7 +109,7 @@ public class VendingMachine {
                                     changeProduct(products);
                                     break;
                                 case 3:
-                                    System.out.println("Loading to file...");
+                                    System.out.println("Saving to file...");
                                     sleep(2000);
                                     printToFile();
                                     break;
@@ -123,9 +124,15 @@ public class VendingMachine {
                                     sleep(4000);
                                     break;
                                 case 6:
+                                    System.out.println("Filling vending machine...\n");
+                                    sleep(4000);
+                                    fillVendingMachine();
+                                    break;
+                                case 7:
                                     System.out.println("Leaving secret menu...\n");
                                     sleep(1500);
                                     break;
+
                             }
                             break;
                         } else {
