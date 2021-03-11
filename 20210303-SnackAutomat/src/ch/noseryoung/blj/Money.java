@@ -105,7 +105,7 @@ public class Money {
 
     /**
      * This is a method to help to showUserbalance,so it doesnt change the usersbalance if he has no money
-     * @param money
+     * @param money Money, that the users adds
      */
     public static void addFastMoney(double money) {
         usersbalance += money;
