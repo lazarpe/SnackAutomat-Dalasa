@@ -95,6 +95,7 @@ public class VendingMachine {
                             System.out.println("[6] Fill vending machine");
                             System.out.println("[7] Leave secret menu");
                             System.out.print("Choose: ");
+                            inputForSecretMethods = 0;
                             inputForSecretMethods = scan.nextInt();
                             switch (inputForSecretMethods) {
                                 case 1 -> changeProductPrice(products);
@@ -114,6 +115,7 @@ public class VendingMachine {
                                     System.out.println("Loading from file...");
                                     sleep(2000);
                                     loadFromFile();
+                                    break;
                                 }
                                 case 5 -> {
                                     refillVendingMachine();
@@ -135,6 +137,7 @@ public class VendingMachine {
                             }
                         }
                         break;
+
                     } catch (Exception e) {
                         System.out.println("\nInvalid input. Try again: ");
                         scan.nextLine();
@@ -380,7 +383,6 @@ public class VendingMachine {
     }
 
     public void loadFromFile() { // ----- SECRET KEY -----
-
         File file = new File(fileName);
 
         if (!file.canRead() || !file.isFile()) {
@@ -426,7 +428,9 @@ public class VendingMachine {
         int stuck = 0;
         if (products.get(number).getAmount() > 0) {
             if (generate.nextInt(10) != 0) {
+                double backup = products.get(number).getPrice();
                 person.setInventory(products.get(number));
+                products.get(number).setPrice(backup);
                 products.get(number).setAmount(products.get(number).getAmount() - 1);
                 System.out.println("Your Product is on the way!");
             } else {

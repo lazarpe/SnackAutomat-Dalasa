@@ -7,12 +7,14 @@ import java.util.ArrayList;
  * Project name: 20210303-SnackAutomat
  **/
 public class Person {
+    Product userProduct;
     ArrayList<Product> myItems = new ArrayList<>();
 
     public void setInventory(Product product) {
-        product.setAmount(1);
-        product.setPrice(0);
-        myItems.add(product);
+        userProduct = product;
+        userProduct.setAmount(1);
+        userProduct.setPrice(0);
+        myItems.add(userProduct);
     }
 
     public void showInventory() {
