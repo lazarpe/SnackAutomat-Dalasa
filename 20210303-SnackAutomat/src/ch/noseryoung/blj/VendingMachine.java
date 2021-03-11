@@ -102,11 +102,14 @@ public class VendingMachine {
                                     System.out.println("Change product...");
                                     changeProduct(products);
                                     break;
-                                case 3:
+                                }
+                                case 3 -> {
                                     System.out.println("Saving to file...");
                                     sleep(2000);
                                     printToFile();
+                                    break;
                                 }
+
                                 case 4 -> {
                                     System.out.println("Loading from file...");
                                     sleep(2000);
@@ -118,15 +121,17 @@ public class VendingMachine {
                                     sleep(4000);
                                     break;
 								}
-                                case 6:
+                                case 6 -> {
                                     System.out.println("Filling vending machine...\n");
                                     sleep(4000);
                                     fillVendingMachine();
                                     break;
-                                case 7:
+                                }
+                                case 7 -> {
                                     System.out.println("Leaving secret menu...\n");
                                     sleep(1500);
                                     break;
+                                }
                             }
                         }
                         break;
