@@ -29,7 +29,7 @@ public class VendingMachine {
     private int number;
     private int payedproduct;  // after the payment
     private final long secretKey = 86420; // long because it's unsigned
-    //private double userbalance;
+
     Scanner scan = new Scanner(System.in);
     Random generate = new Random();
     FileWriter myWriter;
@@ -51,7 +51,7 @@ public class VendingMachine {
     }
 
     public void createMenu(int code) {
-        System.out.println("Menu:");
+        System.out.println("\nMenu:");
         while (true) {
             try {
                 System.out.println("[1] Show vending machine\n" +
@@ -85,13 +85,9 @@ public class VendingMachine {
                 while (true) {
                     try {
                         if (checkSecretKey(number)) {
-                            System.err.println("""
-                                                                | | \s
-                                     ___   ___   ___  _ __  ___ | |_\s
-                                    / __| / _ \\ / __|| '__|/ _ \\| __|
-                                    \\__ \\|  __/| (__ | |  |  __/| |_\s
-                                    |___/ \\___| \\___||_|   \\___| \\__|""");
-                            System.out.println("\n\n[1] Change item price ");
+                            printSecretTitle();
+                            System.out.println("\n");
+                            System.out.println("[1] Change item price ");
                             System.out.println("[2] Change product ");
                             System.out.println("[3] Saving products to file");
                             System.out.println("[4] Loading products from file");
@@ -101,10 +97,8 @@ public class VendingMachine {
                             System.out.print("Choose: ");
                             inputForSecretMethods = scan.nextInt();
                             switch (inputForSecretMethods) {
-                                case 1:
-                                    changeProductPrice(products);
-                                    break;
-                                case 2:
+                                case 1 -> changeProductPrice(products);
+                                case 2 -> {
                                     System.out.println("Change product...");
                                     changeProduct(products);
                                     break;
@@ -112,17 +106,18 @@ public class VendingMachine {
                                     System.out.println("Saving to file...");
                                     sleep(2000);
                                     printToFile();
-                                    break;
-                                case 4:
+                                }
+                                case 4 -> {
                                     System.out.println("Loading from file...");
                                     sleep(2000);
                                     loadFromFile();
-                                    break;
-                                case 5:
+                                }
+                                case 5 -> {
                                     refillVendingMachine();
                                     System.out.println("Vending machine is getting filled...");
                                     sleep(4000);
                                     break;
+								}
                                 case 6:
                                     System.out.println("Filling vending machine...\n");
                                     sleep(4000);
@@ -132,12 +127,9 @@ public class VendingMachine {
                                     System.out.println("Leaving secret menu...\n");
                                     sleep(1500);
                                     break;
-
                             }
-                            break;
-                        } else {
-                            break;
                         }
+                        break;
                     } catch (Exception e) {
                         System.out.println("\nInvalid input. Try again: ");
                         scan.nextLine();
@@ -161,26 +153,29 @@ public class VendingMachine {
                 person.showInventory();
                 break;
             case 7:
-                int musicControl = 0;
+                int musicControl;
                 while (true) {
                     try {
-                        System.out.println("Music settings\n" +
-                                "[1] Turn music on\n" +
-                                "[2] Turn music off\n" +
-                                "[3] Leave music settings");
+                        System.out.println("""
+                                Music settings
+                                [1] Turn music on
+                                [2] Turn music off
+                                [3] Leave music settings""");
                         System.out.print("Choose: ");
                         musicControl = scan.nextInt();
                         switch (musicControl) {
-                            case 1:
+                            case 1 -> {
                                 audioPlayer.playMusic();
                                 continue;
-                            case 2:
+                            }
+                            case 2 -> {
                                 audioPlayer.stopMusic();
                                 continue;
-                            case 3:
+                            }
+                            case 3 -> {
                                 System.out.println("\nLeaving music settings...\n");
                                 sleep(1500);
-                                break;
+                            }
                         }
                         break;
                     } catch (Exception e) {
@@ -195,6 +190,16 @@ public class VendingMachine {
                 System.exit(1);
                 break;
         }
+    }
+
+    public void printSecretTitle() {
+        String TEXT_YELLOW = "\u001B[33m";
+        String ANSI_RESET = "\u001B[0m";
+        System.out.println(TEXT_YELLOW + "                        _   \n" +
+                " ___  ___  ___ _ __ ___| |_ \n" +
+                "/ __|/ _ \\/ __| '__/ _ \\ __|\n" +
+                "\\__ \\  __/ (__| | |  __/ |_ \n" +
+                "|___/\\___|\\___|_|  \\___|\\__|" + ANSI_RESET);
     }
 
     public void fillVendingMachine() {
@@ -227,15 +232,18 @@ public class VendingMachine {
             for (int l = 0; l < width; l++) {
                 if (advanced) {
                     if (addedProducts[l][k].getProduct_code() < 10) {
-                        System.out.print(addedProducts[l][k].getProduct_code() + "  | " + addedProducts[l][k].getName() + ": " +
+                        System.out.print(addedProducts[l][k].getProduct_code() + "  | "
+                                + addedProducts[l][k].getName() + ": " +
                                 addedProducts[l][k].getAmount());
                     } else {
-                        System.out.print(addedProducts[l][k].getProduct_code() + " | " + addedProducts[l][k].getName() + ": " +
+                        System.out.print(addedProducts[l][k].getProduct_code() + " | "
+                                + addedProducts[l][k].getName() + ": " +
                                 addedProducts[l][k].getAmount());
                     }
                 } else {
                     if (addedProducts[l][k].getProduct_code() < 10) {
-                        System.out.print(addedProducts[l][k].getProduct_code() + "  | " + addedProducts[l][k].getName());
+                        System.out.print(addedProducts[l][k].getProduct_code() + "  | "
+                                + addedProducts[l][k].getName());
                     } else {
                         System.out.print(addedProducts[l][k].getProduct_code() + " | " + addedProducts[l][k].getName());
                     }
@@ -258,7 +266,8 @@ public class VendingMachine {
         if (i != 0) {
             for (int k = 0; k < height; k++) {
                 for (int l = 0; l < width; l++) {
-                    Product product = new Product(addedProducts[l][k].getName(), addedProducts[l][k].getPrice(), addedProducts[l][k].getProduct_code(), 9);
+                    Product product = new Product(addedProducts[l][k].getName(), addedProducts[l][k].getPrice(),
+                            addedProducts[l][k].getProduct_code(), 9);
                     addedProducts[l][k] = product;
                 }
             }
@@ -398,7 +407,7 @@ public class VendingMachine {
             if (in != null)
                 try {
                     in.close();
-                } catch (IOException e) {
+                } catch (IOException ignored) {
                 }
         }
         filled = 1;
@@ -451,16 +460,17 @@ public class VendingMachine {
     }
 
     public void changeProductPrice(ArrayList<Product> Products) { // ----- SECRET KEY -----
-        char answerToChangePrice = ' ';
-        double newPrice = 0;
+        char answerToChangePrice;
+        double newPrice;
         System.out.println("You can change the price now...");
         printProducts(true);
-        int number = 0;
+        int number;
         while (true) {
             try {
                 System.out.print("\nWhat's the product number of the price you want to change: ");
                 number = scan.nextInt();
-                System.out.println("You entered this number: " + number + "\nProduct name: " + Products.get(number).getName());
+                System.out.println("You entered this number: " + number + "\nProduct name: "
+                        + Products.get(number).getName());
                 break;
             } catch (Exception e) {
                 System.out.print("Something went wrong with the product number. Try again.\n");
@@ -512,16 +522,17 @@ public class VendingMachine {
     }
 
     public void changeProduct(ArrayList<Product> Products) { // ----- SECRET KEY -----
-        char answerToChangeProduct = ' ';
-        int newProductNumber = 0;
+        char answerToChangeProduct;
+        int newProductNumber;
         System.out.println("You can change the product now...");
         printProducts(true);
-        int number = 0;
+        int number;
         while (true) {
             try {
                 System.out.print("\nWhat's the product number of the product you want to change: ");
                 number = scan.nextInt();
-                System.out.println("You entered this number: " + number + "\nProduct name: " + Products.get(number).getName());
+                System.out.println("You entered this number: " + number + "\nProduct name: "
+                        + Products.get(number).getName());
                 break;
             } catch (Exception e) {
                 System.out.print("Something went wrong with the product number. Try again.\n");
@@ -553,7 +564,8 @@ public class VendingMachine {
                     int tempProductNumber = Products.get(number).getProduct_code();
                     Products.set(number, Products.get(newProductNumber));
                     Products.get(number).setProduct_code(tempProductNumber);
-                    System.out.println("You successfully changed the product to: " + Products.get(newProductNumber).getName());
+                    System.out.println("You successfully changed the product to: "
+                            + Products.get(newProductNumber).getName());
                     sleep(4000);
                     break;
                 } else if (answerToChangeProduct == 'N' || answerToChangeProduct == 'n') {
@@ -574,7 +586,8 @@ public class VendingMachine {
         }
     }
 
-    public VendingMachine(int width, int height) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+    public VendingMachine(int width, int height) throws UnsupportedAudioFileException, IOException,
+            LineUnavailableException {
         this.width = width;
         this.height = height;
     }

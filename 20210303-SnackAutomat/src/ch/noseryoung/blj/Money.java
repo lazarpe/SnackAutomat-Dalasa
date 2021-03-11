@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /****
  ---------------------------------------------------------------------
  Anwendung: Objektbasiert Programmieren NoserYoung
- Author: Davide, Lazar, Sascha
+ Authoren: Davide, Lazar, Sascha
  Datum: 03.03.2021
  Zeit: 16:22
  Projekt: 20210303-SnackAutomat
@@ -57,7 +57,7 @@ public class Money {
                 if (addedNewBalance < 0) {
                     System.out.println("Invalid amount... ");
                 } else {
-                    System.out.println("You added " + addedNewBalance);
+                    System.out.println("You added " + addedNewBalance + " €");
                     usersbalance = usersbalance + addedNewBalance;
                     break;
                 }

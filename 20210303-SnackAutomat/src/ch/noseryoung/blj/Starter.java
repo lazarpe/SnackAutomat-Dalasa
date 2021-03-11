@@ -18,7 +18,9 @@ public class Starter {
     }
 
     public static void printTitle() {
-        System.err.println("""
+        String ANSI_RESET = "\u001B[0m";
+        String ANSI_CYAN = "\u001B[36m";
+        System.out.println(ANSI_CYAN + """
                 
                 ██████╗  █████╗   ██╗       █████╗  ███████╗ █████╗\s
                 ██╔══██╗ ██╔══██╗ ██║      ██╔══██╗ ██╔════╝ ██╔══██╗
@@ -26,6 +28,6 @@ public class Starter {
                 ██║  ██║ ██╔══██║ ██║      ██╔══██║ ╚════██║ ██╔══██║
                 ██████╔╝ ██║  ██║ ███████╗ ██║  ██║ ███████║ ██║  ██║
                 ╚═════╝  ╚═╝  ╚═╝ ╚══════╝ ╚═╝  ╚═╝ ╚══════╝ ╚═╝  ╚═╝
-                """);
+                """ + ANSI_RESET);
     }
 }
