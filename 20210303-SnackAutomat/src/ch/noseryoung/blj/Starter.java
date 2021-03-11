@@ -11,8 +11,8 @@ public class Starter {
         while (true) {
             try {
                 vendingMachine.run();
-            } catch (Exception e){
-                e.printStackTrace();
+            } catch (Exception ignore){
+                //e.printStackTrace();
             }
         }
     }
